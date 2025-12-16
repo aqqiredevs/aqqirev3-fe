@@ -34,34 +34,7 @@ const MarketTrends = () => {
     return () => clearInterval(interval); // cleanup
   });
 
-  return (
-    <section className="p-4 py-12 min-h-screen">
-      <div className="flex flex-col md:flex-row justify-between container mx-auto overflow-clip gap-4">
-        <h2 className="text-center md:text-left text-3xl md:text-4xl font-bold dark:text-white text-primary">
-          Hot on the Market
-        </h2>
-
-        <Select>
-          <SelectTrigger className="grow w-full  md:max-w-1/4 dark:text-white ">
-            <SelectValue placeholder="Select Property Type" />
-          </SelectTrigger>
-          <SelectContent>
-            {categories.map((category) => (
-              <SelectItem
-                key={category}
-                value={category.toLowerCase()}
-                className="capitalize dark:text-white"
-              >
-                {category}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      {!properties ? <TrendSkeleton /> : <TrendItems properties={properties} />}
-    </section>
-  );
+  return <div></div>;
 };
 
 export default MarketTrends;
