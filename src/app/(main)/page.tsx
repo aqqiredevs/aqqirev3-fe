@@ -12,7 +12,7 @@ import Spotlightpt from "@/components/spotlightPropertyTop/spotlightpt";
 export default function Home() {
   return (
     <div className="mx-auto max-w-7xl px-4 bg-white ">
-      <div className="flex h-[1200px] pt-12">
+      <div className="flex h-[1200px] pt-12 items-stretch">
         {/* <Hero /> */}
         {/* <HeroCarousel />
      
@@ -21,11 +21,9 @@ export default function Home() {
       <PopularProperties />
       <WhyAqqire />
       <Testimonials /> */}
-        <div className="headerLeft w-3/4 p-4 pb-12 flex h-[800px]">
+        <div className="headerLeft flex w-3/4 gap-6">
           <div className="spotlightPropertiesContainer w-1/3 ">
-            <Spotlightpt>
-              <div className="space-y-4">...</div>
-            </Spotlightpt>
+            <Spotlightpt />
           </div>
 
           <div className="w-px bg-gray-300"></div>
@@ -35,9 +33,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-px bg-gray-300 h-90%"></div>
+        <div className="w-px bg-gray-300 mx-6" />
 
-        <div className="headerRight w-1/4 p-4"></div>
+        <div className="headerRight w-1/4"></div>
       </div>
     </div>
   );

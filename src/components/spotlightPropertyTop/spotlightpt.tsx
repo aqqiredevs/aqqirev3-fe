@@ -7,7 +7,7 @@ const TestData = [
     industryType: "Hotel",
     image: "https://placehold.co/280x190/png",
     description: "How Boutique Firms Are Winning Large CRE Mandates in 2025",
-    uploader: "by admin",
+    uploader: "Admin",
     dateUploaded: "2 Dec 2025",
   },
   {
@@ -16,7 +16,7 @@ const TestData = [
     industryType: "Residential",
     image: "https://placehold.co/280x190/png",
     description: "Private Credit Funds Step Into Hotel Refinancing Gap",
-    uploader: "by admin",
+    uploader: "Admin",
     dateUploaded: "3 Dec 2025",
   },
 ];
@@ -35,6 +35,13 @@ const Spotlightpt = () => {
           <div className="space-y-1 ">
             <div>{item.industryType}</div>
             <div>{item.description}</div>
+          </div>
+
+          <div className=" flex ">
+            <div className="mr-4">
+              <p> By: {item.uploader}</p>
+            </div>
+            <div>{item.dateUploaded}</div>
           </div>
         </div>
       ))}
