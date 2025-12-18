@@ -8,11 +8,12 @@ import Testimonials from "@/components/Testimonials";
 import WhyAqqire from "@/components/WhyAqqire";
 
 import Spotlightpt from "@/components/spotlightPropertyTop/spotlightpt";
+import TopStories from "@/components/topStories/topStories";
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-7xl px-4 bg-white ">
-      <div className="flex h-[1200px] pt-12 items-stretch">
+      <div className="flex h-[auto] pt-12 items-stretch">
         {/* <Hero /> */}
         {/* <HeroCarousel />
      
@@ -35,7 +36,9 @@ export default function Home() {
 
         <div className="w-px bg-gray-300 mx-6" />
 
-        <div className="headerRight w-1/4"></div>
+        <div className="headerRight w-1/4">
+          <TopStories />
+        </div>
       </div>
     </div>
   );

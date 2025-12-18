@@ -21,6 +21,7 @@ const TestDataMarketTrends = [
     uploader: "Admin",
     dateUploaded: "2 Dec 2025",
     image: "https://placehold.co/620x390/png",
+    timeElapsed: "20 mins",
   },
 ];
 
@@ -35,14 +36,22 @@ const MarketTrends = () => {
             className="h-[340px] w-[620px] object-cover"
           />
           <div className="flex flex-col items-center space-y-3 mt-4">
-            <h3 className="text-xs m-1 border border-gray-200 rounded-sm font-light">
+            <h3 className="text-[8px] border p-1 border-gray-200 rounded-sm font-normal">
               MARKET TRENDS
             </h3>
 
             <h2 className="text-2xl font-semibold text-center">{item.title}</h2>
 
+            <div className="flex items-center space-x-2 text-gray-600 text-sm">
+              <p>By: {item.uploader}</p>
+              <p>{item.dateUploaded}</p>
+              <p>{item.timeElapsed}</p>
+            </div>
+
             <div className="text-sm font-normal text-center text-gray-500">
               {item.description}
+
+              <div className="w-py bg-gray-300"></div>
             </div>
           </div>
         </div>
