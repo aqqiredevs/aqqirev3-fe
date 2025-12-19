@@ -28,20 +28,13 @@ const TestDataTopStories = [
     category: "Category",
     uploadedDate: "27 August, 2025",
   },
-
-  {
-    id: 5,
-    title: "Modern Spaces Designed for Better Living",
-    category: "Category",
-    uploadedDate: "27 August, 2025",
-  },
 ];
 
 const TopStories = () => {
   return (
     <div className="flex flex-col space-y-10">
       {TestDataTopStories.map((item, index) => (
-        <div className=" ">
+        <div>
           <p className="font-semibold uppercase text-sm text-gray-500">
             {item.category}
           </p>
