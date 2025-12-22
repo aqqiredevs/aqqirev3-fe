@@ -1,62 +1,8 @@
 import React from "react";
 import LineTabs from "../lineTabs/lineTabs";
+import MarketForcesTestData from "../lineTabs/lineTabsTestData/marketForcesTestData";
 
-const testData = [
-  {
-    id: 1,
-    label: "",
-    title: "Institutional Buyers Return to Hotel M&A as Rates Settle",
-    description:
-      "Family offices and PE firms resume bidding wars in tertiary metros, especially where stabilized ",
-    date: " 7, Dec 2025",
-    uploadedBy: "admin",
-    image: "https://placehold.co/620x390/png",
-  },
-  {
-    id: 2,
-    label: "",
-    title:
-      "Private Equity Dry Powder Reaches Record Highs as Multi-Family Yields Stabilize",
-    date: " 7, Dec 2025",
-    description:
-      "Family offices and PE firms resume bidding wars in tertiary metros, especially where stabilized ",
-    uploadedBy: "admin",
-    image: "https://placehold.co/620x390/png",
-  },
-  {
-    id: 3,
-    label: "",
-    title:
-      "Office-to-Residential Conversions Accelerate Following New Urban Zoning Incentives",
-    date: " 7, Dec 2025",
-    description:
-      "Family offices and PE firms resume bidding wars in tertiary metros, especially where stabilized ",
-    uploadedBy: "admin",
-    image: "https://placehold.co/620x390/png",
-  },
-  {
-    id: 4,
-    label: "",
-    title:
-      "Cross-Border Capital Flows Into Tech Hubs as Sovereign Wealth Funds Diversify",
-    date: " 7, Dec 2025",
-    description:
-      "Family offices and PE firms resume bidding wars in tertiary metros, especially where stabilized ",
-    uploadedBy: "admin",
-    image: "https://placehold.co/620x390/png",
-  },
-  {
-    id: 5,
-    label: "",
-    title:
-      "Retail Footfall Rebounds to Pre-Pandemic Levels in High-Street Luxury Corridors",
-    date: " 7, Dec 2025",
-    description:
-      "Family offices and PE firms resume bidding wars in tertiary metros, especially where stabilized ",
-    uploadedBy: "admin",
-    image: "https://placehold.co/620x340/png",
-  },
-];
+const testData = MarketForcesTestData;
 
 const MarketForces = () => {
   const mappedTabs = testData.map((item) => ({
@@ -68,18 +14,31 @@ const MarketForces = () => {
     description: item.description,
     image: item.image,
     content: (
-      <div className="space-y-3">
-        <div className="">
-          <img src={item.image} alt={item.title} />
+      <div className="space-y-3 space-x-4 flex items-start">
+        <div className=" ">
+          <div className="w[350px] h-[360px]">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
-        <p className="text-sm text-grey-500"></p>
+
+        <div className="flex flex-col">
+          <p>Market Forces</p>
+          <p>{item.title}</p>
+          <div className="flex space-x-3">
+            <p>{item.uploadedBy}</p>
+            <p>{item.date}</p>
+          </div>
+        </div>
       </div>
     ),
   }));
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      <h1 className="text2x-2x1 font-bold mb-6"> Market Insight</h1>
+    <div className="bg-white min-h-screen">
       <LineTabs items={mappedTabs} />
     </div>
   );

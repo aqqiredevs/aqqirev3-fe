@@ -33,12 +33,12 @@ const LineTabs = ({
 
   return (
     <div className={`max-w-3xl mx-auto${containerClassName}`}>
-      <div className="flex border-b border-gray-300 ">
+      <div className="flex border-b border-gray-300 w-fit ">
         {items.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className="relative px-4 py-0.5 font-medium transition-colors duration-200 skew-x-[-12deg]"
+            className="relative px-4 py-1 font-medium transition-colors duration-200 skew-x-[-12deg]"
           >
             <span className="relative z-10 skew-x-[12deg] block">
               {" "}

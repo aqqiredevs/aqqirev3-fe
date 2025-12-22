@@ -36,9 +36,11 @@ const MarketTrends = () => {
             className="h-[340px] w-[620px] object-cover"
           />
           <div className="flex flex-col items-center space-y-3 mt-4">
-            <h3 className="text-[8px] border p-1 border-gray-200 rounded-sm font-normal">
-              MARKET TRENDS
-            </h3>
+            <div>
+              <h3 className="text-[8px] border p-1 border-gray-200 rounded-sm font-normal">
+                MARKET TRENDS
+              </h3>
+            </div>
 
             <h2 className="text-2xl font-semibold text-center">{item.title}</h2>
 

@@ -40,8 +40,10 @@ export default function Home() {
           <div className="pt-4">
             <AdBanner1 />
           </div>
-          <div>
-            <MarketForces />
+          <div className=" ">
+            <div className="w-3/5">
+              <MarketForces />
+            </div>
           </div>
         </div>
 
