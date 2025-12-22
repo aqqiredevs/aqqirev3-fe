@@ -11,6 +11,7 @@ import Spotlightpt from "@/components/spotlightPropertyTop/spotlightpt";
 import TopStories from "@/components/topStories/topStories";
 import AdBanner1 from "@/components/addBanners/addBanner1";
 import LineTabs from "@/components/lineTabs/lineTabs";
+import MarketForces from "@/components/marketForces/marketForces";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
       <PopularProperties />
       <WhyAqqire />
       <Testimonials /> */}
-        <div className="headerLeft flex flex-col w-3/4 gap-6">
+        <div className="headerLeft flex flex-col w-3/4 gap-6 ">
           <div className="flex space-x-5">
             <div className="spotlightPropertiesContainer w-1/3 ">
               <Spotlightpt />
@@ -40,7 +41,7 @@ export default function Home() {
             <AdBanner1 />
           </div>
           <div>
-            <LineTabs />
+            <MarketForces />
           </div>
         </div>
 

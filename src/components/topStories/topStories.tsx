@@ -34,7 +34,7 @@ const TopStories = () => {
   return (
     <div className="flex flex-col space-y-10">
       {TestDataTopStories.map((item, index) => (
-        <div>
+        <div key={item.id || index}>
           <p className="font-semibold uppercase text-sm text-gray-500">
             {item.category}
           </p>

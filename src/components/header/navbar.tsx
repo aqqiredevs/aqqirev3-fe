@@ -61,73 +61,55 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="hidden xl:flex gap-4 justify-around px-4 py-6 bg-primary shadow-sm">
-      <Link href="/">
-        <Image src="/logo.png" width="150" height="100" alt="Aqqire Logo" />
-      </Link>
+    <div>
+      <div className="upperNav bg-white flex justify-end space-x-4 space-y-4 pt-4">
+        {!isAuthenticated ? (
+          <>
+            <Button
+              asChild
+              className="bg-primary cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-xs"
+            >
+              <Link href="/login">Sign In</Link>
+            </Button>
 
-      <NavigationMenu>
-        <NavigationMenuList>
-          {(isAuthenticated ? privateNavItems : publicNavItems).map((item) => (
-            <NavigationMenuItem key={item.href}>
-              <NavigationMenuLink asChild>
-                <Link href={item.href} className="text-white">
-                  {item.label}
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
+            <Button
+              asChild
+              className="bg-primary bg-blue-500 cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-xs"
+            >
+              <Link href="/register">Subscribe</Link>
+            </Button>
+          </>
+        ) : (
+          <Button
+            onClick={handleLogout}
+            className="bg-white text-primary hover:bg-primary hover:text-white border border-primary text-base font-semibold rounded-md"
+          >
+            Logout
+          </Button>
+        )}
+      </div>
+      <nav className="hidden xl:flex gap-4 justify-center px-4 py-6 bg-white shadow-sm">
+        <Link href="/">
+          <Image src="/logo.png" width="150" height="100" alt="Aqqire Logo" />
+        </Link>
 
-          {!isAuthenticated ? (
-            <>
-              <NavigationMenuItem>
-                <Button
-                  asChild
-                  className="bg-primary cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-md"
-                >
-                  <Link href="/login">Login</Link>
-                </Button>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Button
-                  asChild
-                  className="bg-primary cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-md"
-                >
-                  <Link href="/register">Register</Link>
-                </Button>
-              </NavigationMenuItem>
-            </>
-          ) : (
-            <NavigationMenuItem>
-              <Button
-                onClick={handleLogout}
-                className="bg-white text-primary hover:bg-primary hover:text-white border border-primary text-base font-semibold rounded-md"
-              >
-                Logout
-              </Button>
-            </NavigationMenuItem>
-          )}
-
-          <NavigationMenuItem>
-            <div className="fixed right-5 top-5 space-x-3">
-              <Link href="/search">
-                <Button className="cursor-pointer dark:bg-secondary-foreground dark:text-white rounded-full overflow-hidden border border-white dark:border-transparent p-5">
-                  <FaMagnifyingGlass />
-                </Button>
-              </Link>
-
-              <Button
-                onClick={toggleDark}
-                className="cursor-pointer dark:bg-secondary-foreground dark:text-white rounded-full overflow-hidden border border-white dark:border-transparent p-5"
-              >
-                {isDark ? <FaRegLightbulb /> : <FaLightbulb />}
-              </Button>
-            </div>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </nav>
+        <NavigationMenu>
+          <NavigationMenuList>
+            {(isAuthenticated ? privateNavItems : publicNavItems).map(
+              (item) => (
+                <NavigationMenuItem key={item.href}>
+                  <NavigationMenuLink asChild>
+                    <Link href={item.href} className="text-black">
+                      {item.label}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </nav>
+    </div>
   );
 };
 

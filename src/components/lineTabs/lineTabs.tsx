@@ -3,27 +3,48 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const tabs = [
-  { id: 1, title: "sample title 1", content: "sample content 1" },
-  { id: 2, title: "sample title 2", content: "sample content 2" },
-  { id: 3, title: "sample title 3", content: "sample content 3" },
-  { id: 4, title: "sample title 4", content: "sample content 4" },
-  { id: 5, title: "sample title 5", content: "sample content 5" },
-];
+interface TabItem {
+  id: string | number;
+  label: string;
+  title: string;
+  description: string;
+  date: string;
+  uploadedBy: string;
+  image: string;
+  content: React.ReactNode;
+}
 
-const LineTabs = () => {
-  const [activeTab, setActiveTab] = useState(1);
+interface LineTabsProps {
+  items?: TabItem[];
+  defaultActiveId?: string | number;
+  containerClassName?: string;
+}
+
+const LineTabs = ({
+  items = [],
+  defaultActiveId,
+  containerClassName = "",
+}: LineTabsProps) => {
+  const [activeTab, setActiveTab] = useState<string | number | undefined>(
+    defaultActiveId || items[0]?.id
+  );
+
+  if (!items || items.length === 0) return null;
 
   return (
-    <div className="max-w-3xl mx-auto">
-      {/* Tabs */}
+    <div className={`max-w-3xl mx-auto${containerClassName}`}>
       <div className="flex border-b border-gray-300 ">
-        {tabs.map((tab) => (
+        {items.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className="relative px-4 py-0.5 font-medium transition-colors duration-200 skew-x-[-12deg]"
           >
+            <span className="relative z-10 skew-x-[12deg] block">
+              {" "}
+              {tab.label}{" "}
+            </span>
+
             {activeTab === tab.id && (
               <motion.div
                 layoutId="active-pill"
@@ -35,18 +56,19 @@ const LineTabs = () => {
         ))}
       </div>
 
-      {/* Content */}
-      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-        {tabs
-          .filter((tab) => tab.id === activeTab)
-          .map((tab) => (
-            <div
+      <div className="mt-4">
+        {items.map((tab) =>
+          activeTab === tab.id ? (
+            <motion.div
               key={tab.id}
-              className="p-4 border rounded-lg shadow-sm hover:shadow-md transition"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
             >
               {tab.content}
-            </div>
-          ))}
+            </motion.div>
+          ) : null
+        )}
       </div>
     </div>
   );

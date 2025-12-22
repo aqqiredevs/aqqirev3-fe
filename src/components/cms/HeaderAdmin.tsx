@@ -23,8 +23,8 @@ const HeaderAdmin = () => {
 
   const { isDark, toggleDark } = useDarkMode();
   return (
-    <div className="bg-accent-foreground p-4 list-none">
-      <NavigationMenu className="max-w-full ">
+    <div className="bg-accent-foreground p-4 list-none ">
+      <NavigationMenu className="max-w-full  ">
         <NavigationMenuItem className="mr-auto size-8">
           <Link href={`/`} className="capitalize ">
             <FaHome className="text-accent text-6xl size-full" />
