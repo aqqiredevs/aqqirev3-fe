@@ -16,7 +16,7 @@ const MarketForces = () => {
     content: (
       <div className="space-y-3 space-x-4 flex items-start">
         <div className=" ">
-          <div className="w[350px] h-[360px]">
+          <div className="w-[350px] h-[360px] flex-shrink-0 overflow-hidden">
             <img
               src={item.image}
               alt={item.title}
@@ -32,6 +32,8 @@ const MarketForces = () => {
             <p>{item.uploadedBy}</p>
             <p>{item.date}</p>
           </div>
+          <p>{item.description}</p>
+          <button>Read More</button>
         </div>
       </div>
     ),
@@ -39,7 +41,7 @@ const MarketForces = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <LineTabs items={mappedTabs} />
+      <LineTabs items={mappedTabs} activePillId="marketForcesTabs" />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import TopStories from "@/components/topStories/topStories";
 import AdBanner1 from "@/components/addBanners/addBanner1";
 import LineTabs from "@/components/lineTabs/lineTabs";
 import MarketForces from "@/components/marketForces/marketForces";
+import MarketForcesReports from "@/components/marketForces/marketForcesReports";
 
 export default function Home() {
   return (
@@ -40,9 +41,12 @@ export default function Home() {
           <div className="pt-4">
             <AdBanner1 />
           </div>
-          <div className=" ">
+          <div className="flex ">
             <div className="w-3/5">
               <MarketForces />
+            </div>
+            <div className="w-2/5">
+              <MarketForcesReports />
             </div>
           </div>
         </div>

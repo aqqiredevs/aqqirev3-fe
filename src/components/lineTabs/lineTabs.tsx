@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 interface TabItem {
   id: string | number;
-  label: string;
-  title: string;
-  description: string;
+  label?: string;
+  title?: string;
+  description?: string;
   date: string;
-  uploadedBy: string;
-  image: string;
+  uploadedBy?: string;
+  image?: string;
   content: React.ReactNode;
 }
 
@@ -18,12 +18,14 @@ interface LineTabsProps {
   items?: TabItem[];
   defaultActiveId?: string | number;
   containerClassName?: string;
+  activePillId: string;
 }
 
 const LineTabs = ({
   items = [],
   defaultActiveId,
   containerClassName = "",
+  activePillId = "active-pill",
 }: LineTabsProps) => {
   const [activeTab, setActiveTab] = useState<string | number | undefined>(
     defaultActiveId || items[0]?.id
@@ -41,13 +43,12 @@ const LineTabs = ({
             className="relative px-4 py-1 font-medium transition-colors duration-200 skew-x-[-12deg]"
           >
             <span className="relative z-10 skew-x-[12deg] block">
-              {" "}
-              {tab.label}{" "}
+              {tab.label}
             </span>
 
             {activeTab === tab.id && (
               <motion.div
-                layoutId="active-pill"
+                layoutId={activePillId}
                 className="absolute inset-0 bg-blue-700"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
