@@ -23,14 +23,13 @@ import {
 } from "../ui/navigation-menu";
 
 // Icons
-import {
-  FaLightbulb,
-  FaMagnifyingGlass,
-  FaRegLightbulb,
-} from "react-icons/fa6";
+import { CiSearch } from "react-icons/ci";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Component Imports
 import { publicNavItems, privateNavItems } from "./navItems";
+import { Input } from "../ui/input";
+import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
   const api = process.env.NEXT_PUBLIC_API_URL;
@@ -61,55 +60,88 @@ const NavBar = () => {
   };
 
   return (
-    <div>
-      <div className="upperNav bg-white flex justify-end space-x-4 space-y-4 pt-4">
-        {!isAuthenticated ? (
-          <>
-            <Button
-              asChild
-              className="bg-primary cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-xs"
-            >
-              <Link href="/login">Sign In</Link>
-            </Button>
-
-            <Button
-              asChild
-              className="bg-primary bg-blue-500 cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-xs"
-            >
-              <Link href="/register">Subscribe</Link>
-            </Button>
-          </>
-        ) : (
-          <Button
-            onClick={handleLogout}
-            className="bg-white text-primary hover:bg-primary hover:text-white border border-primary text-base font-semibold rounded-md"
-          >
-            Logout
-          </Button>
-        )}
+    <nav className=" bg-white shadow-sm">
+      <div className="bg-primary p-4">
+        <div className="max-w-7xl mx-auto">
+          <Image src="/logo.png" width="250" height="100" alt="Aqqire Logo" />
+        </div>
       </div>
-      <nav className="hidden xl:flex gap-4 justify-center px-4 py-6 bg-white shadow-sm">
-        <Link href="/">
-          <Image src="/logo.png" width="150" height="100" alt="Aqqire Logo" />
-        </Link>
+      <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-12                                         ">
+        <div className="text-xl text-slate-400 font-semibold flex">
+          {new Date().toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </div>
+        <div className="flex gap-4">
+          {!isAuthenticated ? (
+            <>
+              <Button
+                asChild
+                variant={"ghost"}
+                className="cursor-pointer hover:border-primary hover:text-primary hover:bg-white text-slate-400  text-base font-semibold rounded-xs"
+              >
+                <Link href="/login">
+                  <FaUser /> Sign In
+                </Link>
+              </Button>
 
-        <NavigationMenu>
-          <NavigationMenuList>
+              <Button
+                asChild
+                className="bg-primary cursor-pointer hover:border-primary hover:text-primary hover:bg-white border text-white text-base font-semibold rounded-xs"
+              >
+                <Link href="/register">Subscribe</Link>
+              </Button>
+            </>
+          ) : (
+            <Button
+              onClick={handleLogout}
+              className="bg-white text-primary hover:bg-primary hover:text-white border border-primary text-base font-semibold rounded-md"
+            >
+              Logout
+            </Button>
+          )}
+        </div>
+      </div>
+
+      <NavigationMenu className="border-t border-slate-300 pt-0 h-full pb-0">
+        <div className="max-w-7xl w-full h-full py-0 pb-0 pt-0">
+          <NavigationMenuList className="flex relative gap-6">
+            <NavigationMenuItem className="mr-auto p-4 border-slate-300 border-x">
+              <NavigationMenuLink asChild>
+                <Link href="/">
+                  <GiHamburgerMenu className="size-6 text-slate-500" />
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
             {(isAuthenticated ? privateNavItems : publicNavItems).map(
               (item) => (
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink asChild>
-                    <Link href={item.href} className="text-black">
+                    <Link
+                      href={item.href}
+                      className="text-primary font-semibold hover:text-primary"
+                    >
                       {item.label}
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               )
             )}
+
+            <NavigationMenuItem className="ml-auto p-4 flex gap-2 ">
+              <Input
+                placeholder="Search..."
+                className="border-0 outline-none hover:outline-0 shadow-none focus-visible:ring-0 text-primary"
+              />
+              <CiSearch className="size-8" />
+            </NavigationMenuItem>
           </NavigationMenuList>
-        </NavigationMenu>
-      </nav>
-    </div>
+        </div>
+      </NavigationMenu>
+    </nav>
   );
 };
 

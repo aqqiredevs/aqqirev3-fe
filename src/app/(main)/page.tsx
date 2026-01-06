@@ -15,43 +15,42 @@ import MarketForces from "@/components/marketForces/marketForces";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl px-4 bg-white ">
-      <div className="flex h-[auto] pt-12 items-stretch">
-        {/* <Hero /> */}
-        {/* <HeroCarousel />
+    <div className="mx-auto max-w-7xl pt-12 px-6 bg-white flex ">
+      {/* <Hero /> */}
+      {/* <HeroCarousel />
      
       <News />
       <NewsLetter />
       <PopularProperties />
       <WhyAqqire />
       <Testimonials /> */}
-        <div className="headerLeft flex flex-col w-3/4 gap-6 ">
-          <div className="flex space-x-5">
-            <div className="spotlightPropertiesContainer w-1/3 ">
-              <Spotlightpt />
-            </div>
-
-            <div className="w-px bg-gray-300"></div>
-
-            <div className="marketTrendsContainer w-2/3">
-              <MarketTrends />
-            </div>
+      <div className="headerLeft flex flex-col w-3/4 gap-6 ">
+        <div className="flex space-x-5">
+          <div className="spotlightPropertiesContainer w-1/3 ">
+            <Spotlightpt />
           </div>
-          <div className="pt-4">
-            <AdBanner1 />
-          </div>
-          <div className=" ">
-            <div className="w-3/5">
-              <MarketForces />
-            </div>
+
+          <div className="w-px bg-gray-300"></div>
+
+          <div className="marketTrendsContainer w-2/3">
+            <MarketTrends />
           </div>
         </div>
-
-        <div className="w-px bg-gray-300 mx-6" />
-
-        <div className="headerRight w-1/4">
-          <TopStories />
+        <div className="pt-4">
+          <AdBanner1 />
         </div>
+        <div className="grid grid-cols-5 gap-4">
+          <div className="col-span-3">
+            <MarketForces />
+          </div>
+          <div className="col-span-2">hey aa</div>
+        </div>
+      </div>
+
+      <div className="w-px bg-gray-300 mx-6" />
+
+      <div className="headerRight w-1/4">
+        <TopStories />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ export type PublicNavItems = { label: string; href: string };
 export type PrivateNavItems = { label: string; href: string };
 
 export const publicNavItems: PublicNavItems[] = [
-  { label: "Home", href: "/properties" },
+  { label: "Home", href: "/" },
   { label: "Deals", href: "/newsfeed" },
   { label: "Categories", href: "/vendor" },
   { label: "Advertise With Us", href: "/advertise" },
