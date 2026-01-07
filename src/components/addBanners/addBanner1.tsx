@@ -1,16 +1,21 @@
-import React from "react";
+import Image from "next/image";
 
-const addBannerPlacement = {
-  id: 1,
-  image: "https://placehold.co/920x110/png",
-};
-
-const AdBanner1 = () => {
+const AdBanner = ({
+  image = "https://placehold.co/920x110/png",
+  link = "https://aqqire.com",
+  alt = "Advertisement Banner",
+}: {
+  image: string;
+  link: string;
+  alt: string;
+}) => {
   return (
     <div className="mb-5">
-      <img src={addBannerPlacement.image} />
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <Image alt={alt} width={920} height={110} src={image} />
+      </a>
     </div>
   );
 };
 
-export default AdBanner1;
+export default AdBanner;

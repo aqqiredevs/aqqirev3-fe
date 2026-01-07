@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { set } from "date-fns";
 
 interface TabItem {
   id: string | number;
@@ -56,7 +55,7 @@ const LineTabs = ({
             onClick={() => setActiveTab(tab.id)}
             className="relative py-1 transition-colors duration-200 skew-x-[-12deg] border-b border-gray-300 cursor-pointer flex-1"
           >
-            <span className="z-10 skew-x-[12deg] block">{tab.label}</span>
+            <span className="z-10 skew-x-[12deg] block"></span>
 
             {activeTab === tab.id && (
               <motion.div
