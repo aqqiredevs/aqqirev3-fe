@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { set } from "date-fns";
 
 interface TabItem {
   id: string | number;
@@ -31,20 +32,31 @@ const LineTabs = ({
     defaultActiveId || items[0]?.id
   );
 
+  // Add Autoplay
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prevTab) => {
+        const currentIndex = items.findIndex((item) => item.id === prevTab);
+        const nextIndex = (currentIndex + 1) % items.length;
+        return items[nextIndex].id;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [activeTab]);
+
   if (!items || items.length === 0) return null;
 
   return (
-    <div className={`max-w-3xl mx-auto${containerClassName}`}>
-      <div className="flex border-b border-gray-300 w-fit ">
+    <div className={`mx-auto ${containerClassName}`}>
+      <div className="flex ">
         {items.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className="relative px-4 py-1 font-medium transition-colors duration-200 skew-x-[-12deg]"
+            className="relative py-1 transition-colors duration-200 skew-x-[-12deg] border-b border-gray-300 cursor-pointer flex-1"
           >
-            <span className="relative z-10 skew-x-[12deg] block">
-              {tab.label}
-            </span>
+            <span className="z-10 skew-x-[12deg] block">{tab.label}</span>
 
             {activeTab === tab.id && (
               <motion.div

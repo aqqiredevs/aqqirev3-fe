@@ -1,6 +1,10 @@
 import React from "react";
 import LineTabs from "../lineTabs/lineTabs";
 import MarketForcesTestData from "../lineTabs/lineTabsTestData/marketForcesTestData";
+import Image from "next/image";
+import { formatDate } from "@/utils/formatDate";
+import { CiCalendar, CiUser } from "react-icons/ci";
+import { Button } from "../ui/button";
 
 const testData = MarketForcesTestData;
 
@@ -15,33 +19,33 @@ const MarketForces = () => {
     image: item.image,
     content: (
       <div className="space-y-3 space-x-4 flex items-start">
-        <div className=" ">
-          <div className="w-[350px] h-[360px] flex-shrink-0 overflow-hidden">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="aspect-square min-w-[300px]">
+          <Image src={item.image} alt={item.title} width={300} height={300} />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
           <p>Market Forces</p>
-          <p>{item.title}</p>
-          <div className="flex space-x-3">
-            <p>{item.uploadedBy}</p>
-            <p>{item.date}</p>
+          <p className="text-primary text-sm font-bold">{item.title}</p>
+          <div className="flex gap-2 text-xs text-gray-400">
+            <p className="capitalize flex gap-1 items-center">
+              <CiUser />
+              {item.uploadedBy}
+            </p>
+            <p className="flex gap-1 items-center">
+              <CiCalendar />
+              {formatDate(item.date)}
+            </p>
           </div>
-          <p>{item.description}</p>
-          <button>Read More</button>
+          <p className="text-gray-400 text-sm">{item.description}</p>
+          <Button className="cursor-pointer">Read More</Button>
         </div>
       </div>
     ),
   }));
 
   return (
-    <div className="bg-white min-h-screen">
-      <LineTabs items={mappedTabs} activePillId="marketForcesTabs" />
+    <div className="bg-white">
+      <LineTabs items={mappedTabs} />
     </div>
   );
 };
