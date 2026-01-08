@@ -12,19 +12,16 @@ import TopStories from "@/components/topStories/topStories";
 import AdBanner1 from "@/components/addBanners/addBanner1";
 import LineTabs from "@/components/lineTabs/lineTabs";
 import MarketForces from "@/components/marketForces/marketForces";
+<<<<<<< Updated upstream
 import MarketForcesReports from "@/components/marketForces/marketForcesReports";
+=======
+import MarketNews from "@/components/marketNews/MarketNews";
+import HomeBlog from "@/components/HomeBlog/HomeBlog";
+>>>>>>> Stashed changes
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-7xl pt-12 px-6 bg-white flex ">
-      {/* <Hero /> */}
-      {/* <HeroCarousel />
-     
-      <News />
-      <NewsLetter />
-      <PopularProperties />
-      <WhyAqqire />
-      <Testimonials /> */}
       <div className="headerLeft flex flex-col w-3/4 gap-6 ">
         <div className="flex space-x-5">
           <div className="spotlightPropertiesContainer w-1/3 ">
@@ -44,8 +41,14 @@ export default function Home() {
           <div className="col-span-3">
             <MarketForces />
           </div>
-          <div className="col-span-2">hey aa</div>
+          <div className="col-span-2">
+            <MarketNews />
+          </div>
         </div>
+        <div>
+          <HomeBlog />
+        </div>
+        <AdBanner1 />
       </div>
 
       <div className="w-px bg-gray-300 mx-6" />
