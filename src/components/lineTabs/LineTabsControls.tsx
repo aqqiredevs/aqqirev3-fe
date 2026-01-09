@@ -12,7 +12,7 @@ interface LineTabsNewProps {
   autoplayDuration: number;
 }
 
-const LineTabsNew = ({
+const LineTabsControls = ({
   containerClassName = "",
   tabs,
   activeTab,
@@ -54,4 +54,4 @@ const LineTabsNew = ({
   );
 };
 
-export default LineTabsNew;
+export default LineTabsControls;

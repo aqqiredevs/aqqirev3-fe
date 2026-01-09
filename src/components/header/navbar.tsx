@@ -60,7 +60,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className=" bg-white shadow-sm">
+    <nav className="hidden lg:block bg-white shadow-sm">
       <div className="bg-primary p-4">
         <div className="max-w-7xl mx-auto">
           <Image src="/logo.png" width="250" height="100" alt="Aqqire Logo" />

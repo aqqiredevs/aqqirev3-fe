@@ -5,9 +5,9 @@ const AdBanner = ({
   link = "https://aqqire.com",
   alt = "Advertisement Banner",
 }: {
-  image: string;
-  link: string;
-  alt: string;
+  image?: string;
+  link?: string;
+  alt?: string;
 }) => {
   return (
     <div className="mb-5">
