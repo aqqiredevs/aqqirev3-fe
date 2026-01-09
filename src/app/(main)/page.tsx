@@ -5,6 +5,9 @@ import MarketForces from "@/components/marketForces/marketForces";
 import AdBanner from "@/components/addBanners/addBanner";
 import MarketNews from "@/components/marketNews/MarketNews";
 import HomeBlog from "@/components/HomeBlog/HomeBlog";
+import PropertiesYouMightLike from "@/components/properties/PropertiesYouMightLike";
+import UpcomingIndustryEvents from "@/components/news/UpcomingIndustryEvents";
+import NewsLetter from "@/components/NewsLetter";
 
 export default function Home() {
   return (
@@ -21,21 +24,25 @@ export default function Home() {
             <MarketTrends />
           </div>
         </div>
+
         <div className="pt-4">
           <AdBanner />
         </div>
         <div className="grid grid-cols-5 gap-4">
-          <div className="col-span-3">
+          <div className="col-span-5 lg:col-span-3">
             <MarketForces />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-5 lg:col-span-2">
             <MarketNews />
           </div>
         </div>
-        <div>
-          <HomeBlog />
-        </div>
+
+        <HomeBlog />
         <AdBanner />
+        <PropertiesYouMightLike />
+        <UpcomingIndustryEvents />
+        <AdBanner />
+        <NewsLetter />
       </div>
 
       <div className="w-px bg-gray-300 mx-6" />
