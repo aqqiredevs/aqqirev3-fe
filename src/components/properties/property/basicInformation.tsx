@@ -1,36 +1,22 @@
+import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 
 const BasicInformation = ({
   name,
-  rating,
   address,
-  description,
-  price,
 }: {
   name: string;
   rating: number;
   address: string;
   description: string;
-  price: number;
 }) => {
   return (
-    <section className="space-y-2 col-span-3">
-      <h1 className="text-4xl font-semibold text-accent-foreground">{name}</h1>
-      <div className="flex gap-2 items-center">
-        <div className="flex gap-2 items-center">
-          <FaStar className="text-primary" size={24} />
-          <p className="text-lg font-semibold text-accent-foreground">
-            {rating}
-          </p>
-        </div>
-        <p className="text-accent-foreground/60 text-lg">{address}</p>
+    <section className="space-y-2 col-span-3 flex justify-between items-center">
+      <div>
+        <h1 className="text-4xl font-medium text-accent-foreground">{name}</h1>
+        <div>{address}</div>
       </div>
-      <p className="text-accent-foreground text-md tracking-wider font-light leading-relaxed p-4 pl-0 ">
-        {price}
-      </p>
-      <p className="text-accent-foreground text-md tracking-wider font-light leading-relaxed p-4 pl-0 ">
-        {description}
-      </p>
+      <div className="text-2xl">Auctions by AQQIRE</div>
     </section>
   );
 };
