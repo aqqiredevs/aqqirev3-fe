@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 const NewsLetter = () => {
   return (
     <section
-      className="flex flex-col justify-center items-center text-accent p-12 lg:p-24 gap-6"
+      className="flex flex-col justify-center items-center text-accent p-12 lg:p-24 gap-6 "
       style={{
         background: ` linear-gradient(90deg,rgba(0, 0, 0, 0.59) 0%, rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.43) 100%),
         url('/background/skyline.jpg')`,
@@ -23,12 +23,12 @@ const NewsLetter = () => {
         </p>
       </div>
 
-      <div className="flex gap-4 w-full ">
+      <div className="flex gap-4 w-full max-w-3/4 ">
         <Input
-          className="bg-none border border-white flex-1 p-6 rounded-full"
+          className="bg-none border border-white  p-6 rounded-full"
           placeholder="Enter your email address"
         />
-        <Button className="cursor-pointer capitalize bg-primary flex-1 p-6 rounded-full">
+        <Button className="cursor-pointer capitalize bg-primary p-6 rounded-full">
           Subscribe to our newsletter
         </Button>
       </div>

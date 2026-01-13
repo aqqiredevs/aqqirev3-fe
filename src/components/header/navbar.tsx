@@ -66,7 +66,7 @@ const NavBar = () => {
           <Image src="/logo.png" width="250" height="100" alt="Aqqire Logo" />
         </div>
       </div>
-      <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-12                                         ">
+      <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-6                                         ">
         <div className="text-xl text-slate-400 font-semibold flex">
           {new Date().toLocaleDateString("en-US", {
             month: "long",

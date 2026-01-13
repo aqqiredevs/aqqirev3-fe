@@ -18,11 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased bg-background`
+          `${geistSans.variable} ${geistMono.variable} antialiased `
         )}
       >
         <AuthProvider>{children}</AuthProvider>
-        
       </body>
     </html>
   );
