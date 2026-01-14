@@ -1,6 +1,7 @@
 import NewsLetter from "@/components/NewsLetter";
 import AboutProperty from "@/components/properties/property/AboutProperty";
 import BasicInformation from "@/components/properties/property/basicInformation";
+import Demographics from "@/components/properties/property/Demographics";
 import Hero from "@/components/properties/property/hero";
 import MarketAnalytics from "@/components/properties/property/MarketAnalytics";
 import PropertyMap from "@/components/properties/property/PropertyMap";
@@ -67,6 +68,7 @@ export default async function Page({ params }: pageParams) {
       <AboutProperty description={description} />
       <PropertyMap />
       <MarketAnalytics />
+      <Demographics />
       <NewsLetter />
     </section>
   );

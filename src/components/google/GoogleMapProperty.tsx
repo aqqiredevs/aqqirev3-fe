@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 import { useEffect } from "react";
+import { marker } from "leaflet";
 
 const MapContainer = dynamic(
   () => import("react-leaflet").then((m) => m.MapContainer),
@@ -22,15 +23,19 @@ const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
 const Popup = dynamic(() => import("react-leaflet").then((m) => m.Popup), {
   ssr: false,
 });
+type GoogleMapPropertyProps = {
+  lat?: number;
+  lng?: number;
+  name?: string;
+};
 
 const GoogleMapProperty = ({
-  lat = 40.7128,
-  lng = -74.006,
+  center,
+  markers,
 }: {
-  lat: number;
-  lng: number;
+  center: { lat: number; lng: number };
+  markers?: GoogleMapPropertyProps[];
 }) => {
-  const center = { lat, lng };
   return (
     <section className="p-4 pt-0 space-y-2 relative min-h-48 z-0">
       <MapContainer
@@ -43,7 +48,12 @@ const GoogleMapProperty = ({
           url="https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}"
           attribution="&copy; Google"
         />
+
+        {/* Main Marker */}
         <Marker position={[center.lat, center.lng]}></Marker>
+        {markers?.map((marker, index) => (
+          <Marker key={index} position={[marker.lat!, marker.lng!]}></Marker>
+        ))}
       </MapContainer>
     </section>
   );

@@ -18,7 +18,7 @@ interface LineTabsProps {
   items?: TabItem[];
   defaultActiveId?: string | number;
   containerClassName?: string;
-  activePillId: string;
+  activePillId?: string;
 }
 
 const LineTabs = ({
