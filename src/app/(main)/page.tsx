@@ -12,12 +12,9 @@ import TopStories from "@/components/topStories/topStories";
 import AdBanner1 from "@/components/addBanners/addBanner1";
 import LineTabs from "@/components/lineTabs/lineTabs";
 import MarketForces from "@/components/marketForces/marketForces";
-<<<<<<< Updated upstream
 import MarketForcesReports from "@/components/marketForces/marketForcesReports";
-=======
 import MarketNews from "@/components/marketNews/MarketNews";
 import HomeBlog from "@/components/HomeBlog/HomeBlog";
->>>>>>> Stashed changes
 
 export default function Home() {
   return (
