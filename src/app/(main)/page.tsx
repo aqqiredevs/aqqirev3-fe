@@ -1,20 +1,13 @@
-import Hero from "@/components/hero/hero";
-import HeroCarousel from "@/components/hero/heroCarousel";
 import MarketTrends from "@/components/marketTrends/marketTrends";
-import News from "@/components/News";
-import NewsLetter from "@/components/NewsLetter";
-import PopularProperties from "@/components/properties/PopularProperties";
-import Testimonials from "@/components/Testimonials";
-import WhyAqqire from "@/components/WhyAqqire";
-
 import Spotlightpt from "@/components/spotlightPropertyTop/spotlightpt";
 import TopStories from "@/components/topStories/topStories";
-import AdBanner1 from "@/components/addBanners/addBanner1";
-import LineTabs from "@/components/lineTabs/lineTabs";
 import MarketForces from "@/components/marketForces/marketForces";
-import MarketForcesReports from "@/components/marketForces/marketForcesReports";
+import AdBanner from "@/components/addBanners/addBanner";
 import MarketNews from "@/components/marketNews/MarketNews";
 import HomeBlog from "@/components/HomeBlog/HomeBlog";
+import PropertiesYouMightLike from "@/components/properties/PropertiesYouMightLike";
+import UpcomingIndustryEvents from "@/components/news/UpcomingIndustryEvents";
+import NewsLetter from "@/components/NewsLetter";
 
 export default function Home() {
   return (
@@ -31,21 +24,25 @@ export default function Home() {
             <MarketTrends />
           </div>
         </div>
+
         <div className="pt-4">
-          <AdBanner1 />
+          <AdBanner />
         </div>
         <div className="grid grid-cols-5 gap-4">
-          <div className="col-span-3">
+          <div className="col-span-5 lg:col-span-3">
             <MarketForces />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-5 lg:col-span-2">
             <MarketNews />
           </div>
         </div>
-        <div>
-          <HomeBlog />
-        </div>
-        <AdBanner1 />
+
+        <HomeBlog />
+        <AdBanner />
+        <PropertiesYouMightLike />
+        <UpcomingIndustryEvents />
+        <AdBanner />
+        <NewsLetter />
       </div>
 
       <div className="w-px bg-gray-300 mx-6" />

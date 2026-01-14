@@ -14,7 +14,7 @@ import {
 
 const navMobile = () => {
   return (
-    <nav className="xl:hidden flex gap-4 justify-between px-4 py-6 items-center bg-primary shadow-sm">
+    <nav className="lg:hidden flex gap-4 justify-between px-4 py-6 items-center bg-primary shadow-sm">
       <Link href="/">
         <Image src="/logo.png" width="100" height="100" alt="Aqqire Logo" />
       </Link>

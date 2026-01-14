@@ -60,13 +60,13 @@ const NavBar = () => {
   };
 
   return (
-    <nav className=" bg-white shadow-sm">
+    <nav className="hidden lg:block bg-white shadow-sm">
       <div className="bg-primary p-4">
         <div className="max-w-7xl mx-auto">
           <Image src="/logo.png" width="250" height="100" alt="Aqqire Logo" />
         </div>
       </div>
-      <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-12                                         ">
+      <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-6                                         ">
         <div className="text-xl text-slate-400 font-semibold flex">
           {new Date().toLocaleDateString("en-US", {
             month: "long",

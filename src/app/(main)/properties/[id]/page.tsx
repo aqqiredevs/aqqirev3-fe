@@ -1,10 +1,13 @@
+import NewsLetter from "@/components/NewsLetter";
+import AboutProperty from "@/components/properties/property/AboutProperty";
 import BasicInformation from "@/components/properties/property/basicInformation";
-import Form from "@/components/properties/property/form";
-import GoogleMapProperty from "@/components/properties/property/GoogleMapProperty";
 import Hero from "@/components/properties/property/hero";
-import SimilarProperties from "@/components/properties/property/SimilarProperties";
+import MarketAnalytics from "@/components/properties/property/MarketAnalytics";
+import PropertyMap from "@/components/properties/property/PropertyMap";
+import { Button } from "@/components/ui/button";
 
 import { apiInstance } from "@/utils/axiosInstance";
+import { MdOutlineBedroomParent } from "react-icons/md";
 
 type pageParams = {
   params: Promise<{ id: string }>;
@@ -27,24 +30,44 @@ export default async function Page({ params }: pageParams) {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis velit nihil mollitia esse necessitatibus ad odit est vero quam possimus eveniet dolore quo, unde optio aspernatur cumque doloremque earum et? Pariatur, dolorem eos. Iste nam molestias officia doloribus? Temporibus officia impedit aspernatur distinctio fugiat rem quis reprehenderit? Nostrum, blanditiis ea.",
   };
   return (
-    <>
+    <section className="container mx-auto p-4 pt-12 space-y-4">
+      <BasicInformation
+        address={address}
+        rating={rating}
+        name={name}
+        description={description}
+      />
       <Hero img={src} name={name} />
-      <div className="grid grid-cols-5 max-w-3/5 mx-auto p-4 pt-6">
-        <BasicInformation
-          address={address}
-          rating={rating}
-          name={name}
-          description={description}
-          price={price}
-        />
-        <Form />
+      <div className="flex gap-2 py-4">
+        <Button
+          variant={"outline"}
+          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
+        >
+          View Map
+        </Button>
+        <Button
+          variant={"outline"}
+          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
+        >
+          Street View
+        </Button>
+        <Button
+          variant={"outline"}
+          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
+        >
+          2 Videos
+        </Button>
+        <Button
+          variant={"outline"}
+          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
+        >
+          27 Photos
+        </Button>
       </div>
-      <div className="max-w-3/5 mx-auto p-4 pt-6 min-h-[50vh] relative">
-        <GoogleMapProperty name={name} />
-      </div>
-      <div className="max-w-3/5 mx-auto p-4 pt-6 ">
-        <SimilarProperties name={name} />
-      </div>
-    </>
+      <AboutProperty description={description} />
+      <PropertyMap />
+      <MarketAnalytics />
+      <NewsLetter />
+    </section>
   );
 }

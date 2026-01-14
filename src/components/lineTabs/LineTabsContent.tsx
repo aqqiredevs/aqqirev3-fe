@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface LineTabsContentProps {
-  containerClassName?: string;
+  className?: string;
   active: boolean;
   children: React.ReactNode;
 }
 
 const LineTabsContent = ({
-  containerClassName,
+  className,
   children,
   active,
 }: LineTabsContentProps) => {
@@ -20,7 +20,7 @@ const LineTabsContent = ({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className={cn(`${containerClassName}`)}
+      className={cn(`${className}`)}
     >
       {children}
     </motion.div>
