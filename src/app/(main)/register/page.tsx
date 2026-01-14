@@ -20,11 +20,11 @@ import { MdAlternateEmail } from "react-icons/md";
 
 const Registration = () => {
   const [user, setUser] = useState<userType>({
-    user_firstName: "",
-    user_lastName: "",
-    user_email: "",
-    user_mobileNumber: "",
-    user_passwrd: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
     confirmPassword: "",
   });
 
@@ -69,11 +69,11 @@ const Registration = () => {
             </Label>
             <Input
               type="text"
-              name="user_firstName"
+              name="firstName"
               placeholder="First Name"
               required
               onChange={onChange}
-              value={user.user_firstName ?? ""}
+              value={user.firstName ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
@@ -84,11 +84,11 @@ const Registration = () => {
             </Label>
             <Input
               type="text"
-              name="user_lastName"
+              name="lastName"
               placeholder="Last Name"
               required
               onChange={onChange}
-              value={user.user_lastName ?? ""}
+              value={user.lastName ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
@@ -99,11 +99,11 @@ const Registration = () => {
             </Label>
             <Input
               type="tel"
-              name="user_mobileNumber"
+              name="phone"
               placeholder="Phone Number"
               required
               onChange={onChange}
-              value={user.user_mobileNumber ?? ""}
+              value={user.phone ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
@@ -114,11 +114,11 @@ const Registration = () => {
             </Label>
             <Input
               type="email"
-              name="user_email"
+              name="email"
               placeholder="Email Address"
               required
               onChange={onChange}
-              value={user.user_email ?? ""}
+              value={user.email ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
@@ -129,11 +129,11 @@ const Registration = () => {
             </Label>
             <Input
               type="password"
-              name="user_passwrd"
+              name="password"
               placeholder="Password"
               required
               onChange={onChange}
-              value={user.user_passwrd ?? ""}
+              value={user.password ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>

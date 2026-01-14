@@ -34,17 +34,24 @@ import { FaUser } from "react-icons/fa";
 const NavBar = () => {
   const api = process.env.NEXT_PUBLIC_API_URL;
   const { isDark, toggleDark } = useDarkMode();
-  const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const { isAuthenticated, setIsAuthenticated, setUser, loading, setLoading } =
+    useAuth();
   const router = useRouter();
 
   useEffect(() => {
     const verifyUser = async () => {
-      const auth = await checkAuth();
-      console.log("Auth status from checkAuth:", auth);
-      setIsAuthenticated(auth);
+      const data = await checkAuth();
+
+      if (data && data.authenticated) {
+        console.log("Auth status from checkAuth:", data);
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+      setLoading(false);
     };
     verifyUser();
-  }, []);
+  }, [setIsAuthenticated]);
 
   const handleLogout = async () => {
     try {
@@ -63,7 +70,14 @@ const NavBar = () => {
     <nav className="hidden lg:block bg-white shadow-sm">
       <div className="bg-primary p-4">
         <div className="max-w-7xl mx-auto">
-          <Image src="/logo.png" width="250" height="100" alt="Aqqire Logo" />
+          <Image
+            src="/logo.png"
+            width={250}
+            height={100}
+            style={{ width: "250px", height: "auto" }}
+            alt="Aqqire Logo"
+            priority
+          />
         </div>
       </div>
       <div className="flex justify-between items-center space-x-4 space-y-4 p-4 max-w-7xl mx-auto py-6                                         ">
@@ -74,6 +88,7 @@ const NavBar = () => {
             year: "numeric",
           })}
         </div>
+
         <div className="flex gap-4">
           {!isAuthenticated ? (
             <>

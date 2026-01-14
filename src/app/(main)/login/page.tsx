@@ -28,14 +28,12 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
-  const { setIsAuthenticated } = useAuth();
+  const { isAuthenticated, setIsAuthenticated } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     const verify = async () => {
-      const isLoggedIn = await checkAuth();
-
-      if (isLoggedIn) {
+      if (isAuthenticated) {
         router.push("/");
       }
     };
@@ -44,9 +42,9 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await apiInstance.post(`/users/login`, {
-        user_email: email,
-        user_passwrd: password,
+      const res = await apiInstance.post(`/api/users/login`, {
+        email: email,
+        password: password,
       });
 
       if (res.status == 200) {
