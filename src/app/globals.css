@@ -170,3 +170,19 @@ html body[data-scroll-locked] {
 html {
   scrollbar-gutter: stable;
 }
+
+/* Leaflet  reset*/
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  display: none !important;
+}
