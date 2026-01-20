@@ -22,7 +22,7 @@ const HomeCard = ({
   imageHeight?: number;
 }) => {
   return (
-    <div className="rounded-lg mb-2 space-y-2 flex gap-2 md:gap-4 p-2 flex-col h-full border hover:shadow-md transition-shadow">
+    <div className="rounded-lg mb-2 space-y-2 flex gap-2 md:gap-4 p-2 flex-col md:flex-row h-full">
       <div className="relative w-full">
         <Image
           src={image}

@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SearchMap from "@/components/search/SearchMap";
 import Link from "next/link";
+import { Accordion, AccordionItem } from "@/components/ui/accordion";
+import Faq from "@/components/Faq";
+import Inquiry from "@/components/Inquiry";
 
 type searchParams = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -170,6 +173,9 @@ const Page = async ({ searchParams }: searchParams) => {
             Browse All Categories
           </Button>
         </section>
+
+        <Faq />
+        <Inquiry />
       </div>
     </section>
   );

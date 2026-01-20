@@ -18,15 +18,17 @@ const MarketForces = () => {
       />
       {MarketForcesTestData.map((item, index) => (
         <LineTabsContent active={activeTab === index} key={index}>
-          <HomeCard
-            image={item.image}
-            title={item.title}
-            category={item.label}
-            date={item.date}
-            description={item.description}
-            imageHeight={150}
-            imageWidth={250}
-          />
+          <div className="mt-4">
+            <HomeCard
+              image={item.image}
+              title={item.title}
+              category={item.label}
+              date={item.date}
+              description={item.description}
+              imageHeight={450}
+              imageWidth={250}
+            />
+          </div>
         </LineTabsContent>
       ))}
     </div>
