@@ -9,6 +9,7 @@ import Faq from "@/components/Faq";
 import Inquiry from "@/components/Inquiry";
 import Testimonials from "@/components/Testimonials";
 import PropertiesHeroMap from "@/components/properties/PropertiesHeroMap";
+import NewsLetter from "@/components/NewsLetter";
 
 type searchParams = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -21,7 +22,7 @@ const Page = async ({ searchParams }: searchParams) => {
       <div className="container mx-auto">
         <PropertiesHeroMap />
 
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           <h2 className="text-4xl font-bold mt-12">Trending on AQQIRE</h2>
           <p>See what's catching investor attention this week.</p>
           <div className="flex gap-2">
@@ -31,8 +32,6 @@ const Page = async ({ searchParams }: searchParams) => {
             <Button>Auctions</Button>
             <Button>Featured Deals</Button>
           </div>
-        </div>
-        <div className="max-w-7xl mx-auto">
           <Suspense fallback={<PropertiesResultSkeleton />}>
             <PropertiesResult query={query} />
           </Suspense>
@@ -131,6 +130,7 @@ const Page = async ({ searchParams }: searchParams) => {
         <Faq />
         <Inquiry />
         <Testimonials />
+        <NewsLetter />
       </div>
     </section>
   );

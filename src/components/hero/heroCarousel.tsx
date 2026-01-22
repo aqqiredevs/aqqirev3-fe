@@ -41,8 +41,8 @@ const HeroCarousel = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
-          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" />
+          {/* <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
+          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" /> */}
         </Carousel>
       </div>
     </section>

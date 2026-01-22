@@ -1,6 +1,5 @@
 "use client";
 import { IoBedOutline, IoLocationOutline } from "react-icons/io5";
-
 import "leaflet/dist/leaflet.css";
 
 import dynamic from "next/dynamic";
@@ -10,12 +9,12 @@ import { FaHouseChimney } from "react-icons/fa6";
 
 const MapContainer = dynamic(
   () => import("react-leaflet").then((m) => m.MapContainer),
-  { ssr: false }
+  { ssr: false },
 );
 
 const TileLayer = dynamic(
   () => import("react-leaflet").then((m) => m.TileLayer),
-  { ssr: false }
+  { ssr: false },
 );
 
 const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
@@ -34,7 +33,6 @@ type Props = {
   parking: string;
   image: string;
 };
-
 function PropertyCard({ price, title, location, area, parking, image }: Props) {
   return (
     <div className="w-80 rounded-xl overflow-hidden bg-white shadow-lg mx-auto">
@@ -191,9 +189,7 @@ export default function SearchMap() {
   ];
   useEffect(() => {
     import("leaflet-defaulticon-compatibility");
-    import(
-      "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
-    );
+    import("leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css");
   }, []);
 
   return (
@@ -202,10 +198,11 @@ export default function SearchMap() {
         center={[40.7195, -74.0083]}
         zoom={13}
         className="h-[60vh] w-full"
+        attributionControl={false}
       >
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          attribution="&copy; OpenStreetMap &copy; CARTO"
+          attribution=""
         />
 
         {listings.map((listing) => (
