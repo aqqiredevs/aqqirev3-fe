@@ -1,4 +1,3 @@
-import PropertySearch from "@/components/search/propertySearch";
 import PropertiesResult from "@/components/search/PropertiesResult";
 import { Suspense } from "react";
 import PropertiesResultSkeleton from "@/components/search/PropertyResultSkeleton";
@@ -6,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SearchMap from "@/components/search/SearchMap";
 import Link from "next/link";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import Faq from "@/components/Faq";
 import Inquiry from "@/components/Inquiry";
+import Testimonials from "@/components/Testimonials";
+import PropertiesHeroMap from "@/components/properties/PropertiesHeroMap";
 
 type searchParams = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -19,53 +19,7 @@ const Page = async ({ searchParams }: searchParams) => {
   return (
     <section className="p-4 pt-12">
       <div className="container mx-auto">
-        <section className="space-y-4">
-          <h1 className="text-6xl text-center font-bold">
-            Explore Commercial Properties
-          </h1>
-          <p className="text-xl max-w-3/4 mx-auto text-center">
-            Search verified listings across retail, office, industrial,
-            mixed-use, land, and hospitality. Filter by market, asset type,
-            square footage, price, CAP rate, or investment profile.
-          </p>
-
-          {/* Search */}
-
-          <div className="flex justify-between">
-            <div className="flex gap-1">
-              <Button
-                variant={"outline"}
-                className="rounded-full cursor-pointer text-gray-400"
-              >
-                All
-              </Button>
-              <Button
-                variant={"outline"}
-                className="rounded-full cursor-pointer text-gray-400"
-              >
-                For Sale
-              </Button>
-              <Button
-                variant={"outline"}
-                className="rounded-full cursor-pointer text-gray-400"
-              >
-                For Rent
-              </Button>
-              <Button
-                variant={"outline"}
-                className="rounded-full cursor-pointer text-gray-400"
-              >
-                Under Construction
-              </Button>
-            </div>
-
-            <div>
-              <Input placeholder="Search your Property" />
-            </div>
-          </div>
-        </section>
-
-        <SearchMap />
+        <PropertiesHeroMap />
 
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mt-12">Trending on AQQIRE</h2>
@@ -176,6 +130,7 @@ const Page = async ({ searchParams }: searchParams) => {
 
         <Faq />
         <Inquiry />
+        <Testimonials />
       </div>
     </section>
   );

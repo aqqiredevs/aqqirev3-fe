@@ -19,7 +19,7 @@ const Inquiry = () => {
     firstname: "",
     lastname: "",
     inquiry: "",
-    note: "asd",
+    note: "",
   });
 
   const handleChange = makeChangeHandler<{
@@ -114,7 +114,7 @@ const Inquiry = () => {
                 Auction in Progress | Ends Dec 5, 2025 6PM EST
               </p>
             </div>
-            <Button className="rounded-full">See Details</Button>
+            <Button className="rounded-full cursor-pointer">See Details</Button>
           </div>
 
           <div className="flex gap-6 justify-between items-center text-primary mt-4">
