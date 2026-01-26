@@ -6,7 +6,13 @@ const Footer = () => {
     <footer className="p-12 bg-primary text-white">
       <div className="container grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-12 justify-between mx-auto">
         <div className="space-y-6">
-          <Image src="/logo.png" width={200} height={100} alt="Aqqire logo" />
+          <Image
+            src="/logo.png"
+            width={200}
+            height={100}
+            alt="Aqqire logo"
+            style={{ width: "auto", height: "auto" }}
+          />
           <p className="text-xs">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
             natus officia nisi explicabo quae cum quos nemo eos asperiores!

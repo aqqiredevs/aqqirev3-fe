@@ -1,6 +1,6 @@
 import MarketTrends from "@/components/marketTrends/marketTrends";
 import Spotlightpt from "@/components/spotlightPropertyTop/spotlightpt";
-import TopStories from "@/components/topStories/topStories";
+import TopStories from "@/components/topStories/topStories"
 import MarketForces from "@/components/marketForces/marketForces";
 import AdBanner from "@/components/addBanners/addBanner";
 import MarketNews from "@/components/marketNews/MarketNews";

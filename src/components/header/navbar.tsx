@@ -74,7 +74,7 @@ const NavBar = () => {
             src="/logo.png"
             width={250}
             height={100}
-            style={{ width: "250px", height: "auto" }}
+            style={{ width: "auto", height: "auto" }}
             alt="Aqqire Logo"
             priority
           />

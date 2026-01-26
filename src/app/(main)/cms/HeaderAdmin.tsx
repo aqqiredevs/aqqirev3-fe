@@ -6,9 +6,9 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../ui/navigation-menu";
+} from "../../../components/ui/navigation-menu";
 import { useDarkMode } from "@/hooks/useDarkMode";
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 import { FaLightbulb, FaRegLightbulb } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 
