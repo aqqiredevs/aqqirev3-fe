@@ -30,12 +30,12 @@ const Inquiry = () => {
   }>(setFormData);
 
   return (
-    <section className="p-24 flex bg-primary justify-center items-center">
+    <section className="p-6 md:p-24 flex flex-col md:flex-row bg-primary justify-center items-center">
       <div className="flex-1 space-y-6">
-        <h2 className="text-5xl text-white font-bold">
+        <h2 className="text-4xl md:text-5xl  text-white font-bold">
           Easiest Way to Find Your Next Commercial Space
         </h2>
-        <div className="flex gap-4 w-full">
+        <div className="block space-y-2 md:flex  gap-4 w-full">
           <div className="flex-1 space-y-2">
             <Label
               htmlFor="firstname"
@@ -88,14 +88,14 @@ const Inquiry = () => {
             value={formData.note}
             onChange={handleChange}
             placeholder="Share requirements: size, budget, location, timeline…"
-            className="bg-white rounded-full p-6"
+            className="bg-white md:rounded-full p-6"
           />
         </div>
         <Button className="cursor-pointer w-full rounded-full py-6 px-8 bg-primary border">
           Send Inquiry
         </Button>
       </div>
-      <div className="flex-1 relative flex justify-center items-center">
+      <div className="flex-1 relative hidden md:flex justify-center items-center">
         <Image
           src="https://placehold.co/400x610/png"
           alt="banner"
@@ -104,7 +104,7 @@ const Inquiry = () => {
           className="min-h-[600]"
         />
 
-        <div className="px-6 p-10 bg-white/90 absolute rounded-md border border-white translate-x-20">
+        <div className="px-6 p-10 bg-white/90 md:absolute rounded-md border border-white translate-x-20">
           <div className="flex gap-4 items-center">
             <div>
               <div className="flex gap-2 text-xl items-center text-primary font-semibold">

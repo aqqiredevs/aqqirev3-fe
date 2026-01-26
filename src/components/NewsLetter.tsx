@@ -23,12 +23,12 @@ const NewsLetter = () => {
         </p>
       </div>
 
-      <div className="flex gap-4 w-full max-w-3/4 ">
+      <div className="flex flex-col md:flex-row gap-4 w-full md:max-w-3/4">
         <Input
-          className="bg-none border border-white  p-6 rounded-full"
+          className="bg-none border border-white p-6 rounded-full md:max-w-3/4"
           placeholder="Enter your email address"
         />
-        <Button className="cursor-pointer capitalize bg-primary p-6 rounded-full">
+        <Button className="cursor-pointer capitalize bg-primary p-6 rounded-full grow ">
           Subscribe to our newsletter
         </Button>
       </div>
