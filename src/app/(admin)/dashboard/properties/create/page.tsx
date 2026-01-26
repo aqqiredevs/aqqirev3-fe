@@ -2,7 +2,7 @@
 import React from "react";
 import { useProperty } from "@/store/adminProperty";
 import axios, { isAxiosError } from "axios";
-import AdminPropertyForm from "@/components/cms/properties/AdminPropertyForm";
+import AdminPropertyForm from "@/app/(main)/cms/properties/AdminPropertyForm";
 
 const Page = () => {
   const { name, city, price, state, address, type, reset } = useProperty();

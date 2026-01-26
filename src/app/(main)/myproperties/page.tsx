@@ -30,3 +30,5 @@ const MyPropertiesPage = () => {
 };
 
 export default MyPropertiesPage;
+
+

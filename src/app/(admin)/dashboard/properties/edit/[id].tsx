@@ -1,7 +1,7 @@
 "use client";
 import { useProperty } from "@/store/adminProperty";
 import axios, { isAxiosError } from "axios";
-import AdminPropertyForm from "@/components/cms/properties/AdminPropertyForm";
+import AdminPropertyForm from "@/app/(main)/cms/properties/AdminPropertyForm";
 
 type pageParams = {
   params: Promise<{ id: string }>;
