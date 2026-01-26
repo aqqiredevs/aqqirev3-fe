@@ -21,7 +21,7 @@ const PropertyMap = () => {
         </p>
       </div>
       <div className="mt-4">
-        <GoogleMapProperty lat={40.689249} lng={-74.0445} />
+        <GoogleMapProperty center={{ lat: 40.689249, lng: -74.0445 }} />
       </div>
     </section>
   );

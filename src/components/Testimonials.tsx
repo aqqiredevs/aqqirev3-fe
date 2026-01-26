@@ -1,162 +1,135 @@
+"use client";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+
+import { useRef } from "react";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
+import { FaStar } from "react-icons/fa6";
 
-type testimony = {
-  title: string;
-  body: string;
-  rating: string;
-  reviewerName: string;
-  date: string;
-  img: string;
-};
+const HeroCarousel = () => {
+  const testimonials = [
+    {
+      name: "Michael Reyes",
+      title: "Commercial Investor",
+      testimonial:
+        "AQQIRE's analytics and comp data gave me the clarity I needed to make fast decisions. Their platform surfaced deals I wasn't seeing anywhere else, and it's now one of my must-use tools when evaluating new markets.",
+      image: "https://placehold.co/100x100/png",
+      rating: 5,
+    },
+    {
+      name: "Sarah Thompson",
+      title: "Real Estate Developer",
+      testimonial:
+        "The deal discovery tools helped us identify off-market opportunities faster than ever. AQQIRE has become a core part of our acquisition workflow.",
+      image: "https://placehold.co/100x100/png",
+      rating: 4,
+    },
+    {
+      name: "David Chen",
+      title: "Multifamily Operator",
+      testimonial:
+        "What impressed me most was the depth of market insights. The data is accurate, easy to understand, and actionable.",
+      image: "https://placehold.co/100x100/png",
+      rating: 3,
+    },
+    {
+      name: "Emily Carter",
+      title: "Private Equity Analyst",
+      testimonial:
+        "AQQIRE streamlined our underwriting process and helped our team move with confidence. The UI is intuitive and incredibly fast.",
+      image: "https://placehold.co/100x100/png",
+      rating: 4,
+    },
+  ];
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
-const items: testimony[] = [
-  {
-    title: "Excellent Service",
-    body: "The team was professional and exceeded my expectations. Highly recommended!",
-    rating: "5",
-    reviewerName: "Alice Johnson",
-    date: "2024-01-15",
-    img: "https://randomuser.me/api/portraits/women/1.jpg",
-  },
-  {
-    title: "Great Experience",
-    body: "I loved working with this company. Everything was smooth and efficient.",
-    rating: "5",
-    reviewerName: "Bob Smith",
-    date: "2024-02-10",
-    img: "https://randomuser.me/api/portraits/men/2.jpg",
-  },
-  {
-    title: "Very Satisfied",
-    body: "Prompt responses and quality work. Will use their services again.",
-    rating: "4",
-    reviewerName: "Catherine Lee",
-    date: "2024-03-05",
-    img: "https://randomuser.me/api/portraits/women/3.jpg",
-  },
-  {
-    title: "Outstanding Support",
-    body: "Customer support was always available and helpful throughout the process.",
-    rating: "5",
-    reviewerName: "David Kim",
-    date: "2024-03-22",
-    img: "https://randomuser.me/api/portraits/men/4.jpg",
-  },
-  {
-    title: "Highly Recommend",
-    body: "Their attention to detail is unmatched. I am very happy with the results.",
-    rating: "5",
-    reviewerName: "Emily Clark",
-    date: "2024-04-01",
-    img: "https://randomuser.me/api/portraits/women/5.jpg",
-  },
-  {
-    title: "Professional Team",
-    body: "The staff was knowledgeable and friendly. Great experience overall.",
-    rating: "4",
-    reviewerName: "Frank Miller",
-    date: "2024-04-18",
-    img: "https://randomuser.me/api/portraits/men/6.jpg",
-  },
-  {
-    title: "Exceeded Expectations",
-    body: "They went above and beyond to deliver what I needed.",
-    rating: "5",
-    reviewerName: "Grace Turner",
-    date: "2024-05-02",
-    img: "https://randomuser.me/api/portraits/women/7.jpg",
-  },
-  {
-    title: "Quick and Reliable",
-    body: "Fast turnaround and reliable service. Will recommend to others.",
-    rating: "4",
-    reviewerName: "Henry Adams",
-    date: "2024-05-15",
-    img: "https://randomuser.me/api/portraits/men/8.jpg",
-  },
-  {
-    title: "Impressive Results",
-    body: "The results were better than I expected. Thank you for your hard work!",
-    rating: "5",
-    reviewerName: "Isabella Martinez",
-    date: "2024-05-28",
-    img: "https://randomuser.me/api/portraits/women/9.jpg",
-  },
-  {
-    title: "Fantastic Collaboration",
-    body: "Working together was a pleasure. Communication was clear and effective.",
-    rating: "5",
-    reviewerName: "Jack Wilson",
-    date: "2024-06-10",
-    img: "https://randomuser.me/api/portraits/men/10.jpg",
-  },
-];
-
-const Testimonials = () => {
   return (
-    <section className="p-4 text-accent-foreground text-center space-y-6 md:py-16">
-      <h3 className="text-2xl md:text-5xl pb-6  py-12 font-semibold">
-        Don&apos;t just take our word for it.
-      </h3>
-      <div className="container mx-auto p-2 mb-12">
-        {/* <Carousel className="scrollbar-">
+    <section className="p-4 py-16">
+      <div className="container mx-auto space-y-6">
+        <h2 className="font-bold text-4xl">What Our Clients Say About Us</h2>
+        <p className="text-gray-400 mb-8">
+          Real feedback from investors, brokers, and businesses growing their
+          portfolio through AQQIRE.
+        </p>
+        <Carousel
+          plugins={[plugin.current]}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="relative"
+        >
           <CarouselContent>
-            {items.map((item: testimony) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem
-                className="basis-1/1 md:basis-1/2 lg:basis-1/3 xl:basis-1/5"
-                key={item.body}
+                className="basis-1/1 md:basis-1/2 lg:basis-1/3 "
+                key={testimonial.name}
               >
-                <TestimonialItem {...item} key={item.title} />
+                <TestimonialCard {...testimonial} />
               </CarouselItem>
             ))}
           </CarouselContent>
-        </Carousel> */}
-
-        <ScrollArea className="max-w-full mx-auto ">
-          <div className="gap-4 p-4 flex grid-cols-3 mb-4">
-            {items.map((item: testimony) => (
-              <TestimonialItem {...item} key={item.title} />
-            ))}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+          <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
+          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" />
+        </Carousel>
       </div>
     </section>
   );
 };
 
-export const TestimonialItem = ({
-  title,
-  body,
+function TestimonialCard({
+  name,
+  testimonial,
+  image,
   rating,
-  reviewerName,
-  date,
-  img,
-}: testimony) => {
+  title,
+}: {
+  name: string;
+  testimonial: string;
+  image: string;
+  rating: number;
+  title: string;
+}) {
+  const maxRating = 5;
   return (
-    <Card className="gap-2  aspect-auto min-w-3xs">
-      <CardHeader className="mb-0 !pb-0 gap-0">
-        <p className="md:text-2xl font-bold">{rating} / 5</p>
-        <CardTitle className="text-lg md:text-lg font-bold text-center">
-          {title}
-        </CardTitle>
+    <Card className="border rounded-xl min-h-96">
+      <CardHeader>
+        <div className="flex gap-6 items-center">
+          <Image
+            src={image}
+            alt={`${name} profile picture`}
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
+          <div>
+            <h3 className="text-3xl font-semibold">{name}</h3>
+            <p className="text-lg text-gray-500">{title}</p>
+          </div>
+        </div>
       </CardHeader>
-      <CardContent className="space-y-1">
-        <p className="font-semibold">{reviewerName}</p>
-        <p className="text-xs text-muted-foreground">{date}</p>
-        <CardDescription className="text-xs text-center italic text-muted-foreground">
-          &quot;{body}&quot;
-        </CardDescription>
+
+      <CardContent>
+        <p className="leading-8">{testimonial}</p>
       </CardContent>
+
+      <CardFooter className="flex gap-4 mt-auto">
+        {Array.from({ length: maxRating }).map((_, index) => (
+          <FaStar
+            key={index}
+            className={index < rating ? "text-yellow-400" : "text-gray-300"}
+            size={35}
+          />
+        ))}
+      </CardFooter>
     </Card>
   );
-};
-
-export default Testimonials;
+}
+export default HeroCarousel;
