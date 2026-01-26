@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { apiInstance } from "@/utils/axiosInstance";
 
 // Utils
 import checkAuth from "@/utils/checkAuth";
@@ -32,7 +33,7 @@ import { Input } from "../ui/input";
 import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
-  const api = process.env.NEXT_PUBLIC_API_URL;
+
   const { isDark, toggleDark } = useDarkMode();
   const { isAuthenticated, setIsAuthenticated, setUser, loading, setLoading } =
     useAuth();
@@ -55,12 +56,16 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch(`${api}/users/logout`, {
-        method: "POST",
-        credentials: "include",
-      });
-      router.push("/login");
+
+      await apiInstance.post("/api/users/logout");
+
       setIsAuthenticated(false);
+      setUser(null);
+
+
+      localStorage.removeItem("access_token");
+
+      router.push("/login");
     } catch (error) {
       console.error("Logout failed", error);
     }

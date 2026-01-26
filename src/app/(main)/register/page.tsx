@@ -20,8 +20,8 @@ import { MdAlternateEmail } from "react-icons/md";
 
 const Registration = () => {
   const [user, setUser] = useState<userType>({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     phone: "",
     password: "",
@@ -35,7 +35,7 @@ const Registration = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await apiInstance.post(`/users/register`, {
+      const res = await apiInstance.post(`/api/users/register`, {
         ...user,
         confirmPassword: undefined,
       });
@@ -64,31 +64,31 @@ const Registration = () => {
           </div>
 
           <div className="flex w-full items-center border p-2 rounded-xl">
-            <Label htmlFor="firstName" className="dark:text-white">
+            <Label htmlFor="first_name" className="dark:text-white">
               <MdAlternateEmail size={24} />
             </Label>
             <Input
               type="text"
-              name="firstName"
+              name="first_name"
               placeholder="First Name"
               required
               onChange={onChange}
-              value={user.firstName ?? ""}
+              value={user.first_name ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
 
           <div className="flex w-full items-center border p-2 rounded-xl">
-            <Label htmlFor="lastName" className="dark:text-white">
+            <Label htmlFor="last_name" className="dark:text-white">
               <MdAlternateEmail size={24} />
             </Label>
             <Input
               type="text"
-              name="lastName"
+              name="last_name"
               placeholder="Last Name"
               required
               onChange={onChange}
-              value={user.lastName ?? ""}
+              value={user.last_name ?? ""}
               className="bg-transparent border-0 w-full outline-none text-sm text-black md:text-base focus-visible:ring-transparent"
             />
           </div>
