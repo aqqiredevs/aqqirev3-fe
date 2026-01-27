@@ -30,12 +30,12 @@ const Inquiry = () => {
   }>(setFormData);
 
   return (
-    <section className="p-6 md:p-24 flex flex-col md:flex-row bg-primary justify-center items-center">
+    <section className="p-6 xl:p-24 flex gap-4 flex-col xl:flex-row bg-primary justify-center items-center">
       <div className="flex-1 space-y-6">
-        <h2 className="text-4xl md:text-5xl  text-white font-bold">
+        <h2 className="text-4xl xl:text-5xl  text-white font-bold">
           Easiest Way to Find Your Next Commercial Space
         </h2>
-        <div className="block space-y-2 md:flex  gap-4 w-full">
+        <div className="block space-y-2 xl:flex  gap-4 w-full">
           <div className="flex-1 space-y-2">
             <Label
               htmlFor="firstname"
@@ -95,13 +95,13 @@ const Inquiry = () => {
           Send Inquiry
         </Button>
       </div>
-      <div className="flex-1 relative hidden md:flex justify-center items-center">
+      <div className="flex-1 relative hidden xl:flex justify-center items-center">
         <Image
           src="https://placehold.co/400x610/png"
           alt="banner"
           width={450}
           height={600}
-          className="min-h-[600]"
+          className="min-h-[600] hidden xl:block"
         />
 
         <div className="px-6 p-10 bg-white/90 md:absolute rounded-md border border-white translate-x-20">

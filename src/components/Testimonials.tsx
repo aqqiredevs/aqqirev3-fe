@@ -66,18 +66,18 @@ const HeroCarousel = () => {
           }}
           className="relative"
         >
-          <CarouselContent className="-ml-12">
+          <CarouselContent className="xl:-ml-12">
             {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.name}
-                className="basis-full md:basis-1/2 lg:basis-1/3 flex pl-12"
+                className="basis-full md:basis-1/2 lg:basis-1/3 flex xl:pl-12"
               >
                 <TestimonialCard {...testimonial} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
-          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" />
+          {/* <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
+          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" /> */}
         </Carousel>
       </div>
     </section>
@@ -101,7 +101,7 @@ function TestimonialCard({
   return (
     <Card className="border rounded-xl h-full flex flex-col">
       <CardHeader>
-        <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
+        <div className="flex flex-col xl:flex-row gap-2 md:gap-6 items-center">
           <Image
             src={image}
             alt={`${name} profile picture`}
