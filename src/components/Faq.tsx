@@ -40,7 +40,7 @@ const Faq = () => {
     },
   ];
   return (
-    <section className="flex gap-8 p-4 py-10">
+    <section className="flex flex-col lg:flex-row gap-8 p-4 py-10">
       <div className="flex-1 space-y-2">
         <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
         <p className="text-lg">

@@ -13,12 +13,12 @@ const AboutProperty = ({ description }: { description: string }) => {
   return (
     <section className="grid grid-cols-6 my-4">
       {/* Information */}
-      <div className="space-y-4 col-span-4">
-        <h2 className="font-bold text-4xl">About The Property:</h2>
-        <p className="text-lg text-gray-500">{description}</p>
+      <div className="space-y-4 xl:col-span-4 col-span-6">
+        <h2 className="font-bold text-2xl xl:text-4xl">About The Property:</h2>
+        <p className="xl:text-lg text-gray-500">{description}</p>
 
         <h3 className="font-bold text-3xl mt-8">Facility:</h3>
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid  grid-cols-2 gap-6 xl:grid-cols-4 xl:gap-12">
           <div className="flex gap-2 text-lg text-primary">
             <MdOutlineBedroomParent size={30} />1 Bedroom(s)
           </div>
@@ -35,7 +35,7 @@ const AboutProperty = ({ description }: { description: string }) => {
           </div>
         </div>
         <h3 className="font-bold text-3xl mt-8  mb-4">Features:</h3>
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 xl:grid-cols-4 xl:gap-12 gap-6">
           <div className="flex gap-2 text-lg text-primary">
             <MdOutlineBedroomParent size={30} />1 Bedroom(s)
           </div>
@@ -70,9 +70,9 @@ const AboutProperty = ({ description }: { description: string }) => {
       </div>
       {/* Broker */}
 
-      <aside className="col-span-2 relative">
+      <aside className="col-span-6 xl:col-span-2 relative pt-6 xl:pt-0">
         {/* Broker */}
-        <div className="max-w-3/4 mx-auto space-y-4">
+        <div className="xl:max-w-3/4 mx-auto space-y-4">
           <div className="space-y-4 shadow-md p-6 flex flex-col justify-center items-center rounded-lg ">
             <Image
               src="https://placehold.co/160x160/png"

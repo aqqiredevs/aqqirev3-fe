@@ -7,15 +7,15 @@ import dynamic from "next/dynamic";
 // Do not remove this dynamic import
 const GoogleMapProperty = dynamic(
   () => import("@/components/google/GoogleMapProperty"),
-  { ssr: false }
+  { ssr: false },
 );
 
 const PropertyMap = () => {
   return (
-    <section className="p-4 mt-6">
+    <section className="xl:p-4 mt-6">
       <div className="space-y-4">
         <h3 className="text-3xl font-bold">Property Location</h3>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-400 text-sm xl:text-lg">
           Discover Commercial districts and high-growth areas with the deals,
           data, and businesses that matter.
         </p>

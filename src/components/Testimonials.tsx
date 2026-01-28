@@ -66,24 +66,23 @@ const HeroCarousel = () => {
           }}
           className="relative"
         >
-          <CarouselContent>
+          <CarouselContent className="xl:-ml-12">
             {testimonials.map((testimonial) => (
               <CarouselItem
-                className="basis-1/1 md:basis-1/2 lg:basis-1/3 "
                 key={testimonial.name}
+                className="basis-full md:basis-1/2 lg:basis-1/3 flex xl:pl-12"
               >
                 <TestimonialCard {...testimonial} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
-          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" />
+          {/* <CarouselPrevious className="cursor-pointer absolute top-[50%] left-5" />
+          <CarouselNext className="cursor-pointer absolute top-[50%] right-5" /> */}
         </Carousel>
       </div>
     </section>
   );
 };
-
 function TestimonialCard({
   name,
   testimonial,
@@ -98,10 +97,11 @@ function TestimonialCard({
   title: string;
 }) {
   const maxRating = 5;
+
   return (
-    <Card className="border rounded-xl min-h-96">
+    <Card className="border rounded-xl h-full flex flex-col">
       <CardHeader>
-        <div className="flex gap-6 items-center">
+        <div className="flex flex-col xl:flex-row gap-2 md:gap-6 items-center">
           <Image
             src={image}
             alt={`${name} profile picture`}
@@ -110,22 +110,22 @@ function TestimonialCard({
             className="rounded-full"
           />
           <div>
-            <h3 className="text-3xl font-semibold">{name}</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold">{name}</h3>
             <p className="text-lg text-gray-500">{title}</p>
           </div>
         </div>
       </CardHeader>
 
-      <CardContent>
-        <p className="leading-8">{testimonial}</p>
+      <CardContent className="flex-1">
+        <p className="md:leading-8 text-sm">{testimonial}</p>
       </CardContent>
 
-      <CardFooter className="flex gap-4 mt-auto">
+      <CardFooter className="mt-auto flex gap-4">
         {Array.from({ length: maxRating }).map((_, index) => (
           <FaStar
             key={index}
             className={index < rating ? "text-yellow-400" : "text-gray-300"}
-            size={35}
+            size={28}
           />
         ))}
       </CardFooter>

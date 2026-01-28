@@ -15,6 +15,13 @@ type pageParams = {
 };
 
 export default async function Page({ params }: pageParams) {
+  const actions = [
+    { label: "View Map", route: "/map" },
+    { label: "Street View", route: "/street-view" },
+    { label: "2 Videos", route: "/videos" },
+    { label: "27 Photos", route: "/photos" },
+  ];
+
   const { id } = await params;
 
   // Todo add api endpoint to fetch the property by id
@@ -39,31 +46,16 @@ export default async function Page({ params }: pageParams) {
         description={description}
       />
       <Hero img={src} name={name} />
-      <div className="flex gap-2 py-4">
-        <Button
-          variant={"outline"}
-          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
-        >
-          View Map
-        </Button>
-        <Button
-          variant={"outline"}
-          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
-        >
-          Street View
-        </Button>
-        <Button
-          variant={"outline"}
-          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
-        >
-          2 Videos
-        </Button>
-        <Button
-          variant={"outline"}
-          className="bg-white hover:bg-primary hover:text-white cursor-pointer"
-        >
-          27 Photos
-        </Button>
+      <div className="grid grid-cols-4 xl:max-w-2/4 gap-2 py-4">
+        {actions.map(({ label, route }) => (
+          <Button
+            key={label}
+            variant="outline"
+            className="bg-white hover:bg-primary hover:text-white cursor-pointer"
+          >
+            {label}
+          </Button>
+        ))}
       </div>
       <AboutProperty description={description} />
       <PropertyMap />

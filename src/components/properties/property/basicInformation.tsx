@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { FaStar } from "react-icons/fa6";
-
 const BasicInformation = ({
   name,
   address,
@@ -11,9 +8,11 @@ const BasicInformation = ({
   description: string;
 }) => {
   return (
-    <section className="space-y-2 col-span-3 flex justify-between items-center">
+    <section className="flex flex-col md:flex-row md:justify-between items-center gap-2">
       <div>
-        <h1 className="text-4xl font-medium text-accent-foreground">{name}</h1>
+        <h1 className="text-3xl font-bold md:text-4xl  text-accent-foreground">
+          {name}
+        </h1>
         <div>{address}</div>
       </div>
       <div className="text-2xl">Auctions by AQQIRE</div>
