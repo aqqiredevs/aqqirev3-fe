@@ -1,12 +1,4 @@
-import Link from "next/link";
-import { Suspense } from "react";
-
-// UI Components
-import { Button } from "@/components/ui/button";
-
 // Sections
-import PropertiesResult from "@/components/search/PropertiesResult";
-import PropertiesResultSkeleton from "@/components/search/PropertyResultSkeleton";
 import Faq from "@/components/Faq";
 import Inquiry from "@/components/Inquiry";
 import Testimonials from "@/components/Testimonials";
