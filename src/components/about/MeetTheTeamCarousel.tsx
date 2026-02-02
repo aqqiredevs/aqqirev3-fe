@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import {
   Carousel,
@@ -10,13 +8,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 const MeetTheTeamCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const [, setCurrent] = useState(0);
 
   const people = [
     {
@@ -63,21 +59,9 @@ const MeetTheTeamCarousel = () => {
     },
   ];
 
-  useEffect(() => {
-    if (!api) return;
-
-    setCurrent(api.selectedScrollSnap() + 1);
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
   return (
     <div className="px-12">
-      <Carousel
-        opts={{ loop: true, align: "start" }}
-        setApi={setApi}
-        className="w-full"
-      >
+      <Carousel opts={{ loop: true, align: "start" }} className="w-full">
         <CarouselContent className="-ml-4">
           {people.map((person, index) => (
             <CarouselItem

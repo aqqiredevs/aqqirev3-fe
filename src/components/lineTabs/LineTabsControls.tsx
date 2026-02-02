@@ -25,7 +25,7 @@ const LineTabsControls = ({
     }, autoplayDuration);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const id = useId();
 

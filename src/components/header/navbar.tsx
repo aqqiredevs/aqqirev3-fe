@@ -33,7 +33,6 @@ import { Input } from "../ui/input";
 import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
-
   const { isDark, toggleDark } = useDarkMode();
   const { isAuthenticated, setIsAuthenticated, setUser, loading, setLoading } =
     useAuth();
@@ -56,12 +55,10 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-
       await apiInstance.post("/api/users/logout");
 
       setIsAuthenticated(false);
       setUser(null);
-
 
       localStorage.removeItem("access_token");
 
@@ -148,7 +145,7 @@ const NavBar = () => {
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              )
+              ),
             )}
 
             <NavigationMenuItem className="ml-auto p-4 flex gap-2 ">

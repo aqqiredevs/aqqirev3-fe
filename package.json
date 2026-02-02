@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "lucide-react": "^0.542.0",
     "next": "^16.0.10",
     "next-themes": "^0.4.6",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.3",
     "react-day-picker": "^9.9.0",
     "react-dom": "^19.2.3",
@@ -52,6 +53,7 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
+    "zod": "^4.3.6",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
@@ -61,12 +63,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
-    "eslint": "9.35.0",
-    "eslint-config-next": "15.5.2",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12",
     "tw-animate-css": "^1.3.8",
-    "typescript": "^5"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "main": "index.js",

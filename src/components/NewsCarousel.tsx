@@ -15,16 +15,14 @@ import { article } from "@/types/news";
 
 const NewsCarousel = ({ articles }: { articles: article[] }) => {
   const [api, setApi] = useState<CarouselApi>();
-  const [, setCurrent] = useState(0);
+  const [, setCurrent] = useState<number>(0);
 
-  useEffect(() => {
-    if (!api) return;
-
-    setCurrent(api.selectedScrollSnap() + 1);
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+  // useEffect(() => {
+  //   setCurrent(api!.selectedScrollSnap() + 1);
+  //   api!.on("select", () => {
+  //     setCurrent(api!.selectedScrollSnap() + 1);
+  //   });
+  // }, [api]);
 
   return (
     <div>

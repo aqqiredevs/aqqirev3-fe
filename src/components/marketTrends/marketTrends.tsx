@@ -11,6 +11,7 @@ import { searchProperties } from "@/actions/searchProperties";
 import { useEffect, useState } from "react";
 import TrendItems from "./trendItems";
 import TrendSkeleton from "./trendSkeleton";
+import Image from "next/image";
 
 const TestDataMarketTrends = [
   {
@@ -30,11 +31,7 @@ const MarketTrends = () => {
     <div>
       {TestDataMarketTrends.map((item) => (
         <div key={item.id} className="bg-white">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="h-[340px] w-[620px] object-cover"
-          />
+          <Image src={item.image} alt={item.title} height={340} width={620} />
           <div className="flex flex-col items-center space-y-3 mt-4">
             <div>
               <h3 className="text-[8px] border p-1 border-gray-200 rounded-sm font-normal">
