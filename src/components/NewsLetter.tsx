@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 const NewsLetter = () => {
   return (
     <section
-      className="flex flex-col justify-center items-center text-accent p-12 lg:p-24 gap-6 "
+      className="flex flex-col justify-center items-center text-accent p-12 lg:p-24 gap-6 min-h-[70vh]"
       style={{
         background: ` linear-gradient(90deg,rgba(0, 0, 0, 0.59) 0%, rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.43) 100%),
         url('/background/skyline.jpg')`,
