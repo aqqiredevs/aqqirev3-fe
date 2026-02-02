@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useActionState } from "react";
 
-const form = () => {
+const Form = () => {
   const [state, formAction, isPending] = useActionState(submitForm, null);
   const radioItems = [
     "General Inquiry",
