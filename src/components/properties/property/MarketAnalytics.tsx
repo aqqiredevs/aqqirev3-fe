@@ -12,14 +12,14 @@ import Link from "next/link";
 const MarketAnalytics = () => {
   return (
     <section className="space-y-4">
-      <div className="flex justify-between py-4">
+      <div className="flex flex-col xl:flex-row justify-between gap-4">
         <h2 className="text-3xl font-bold">Market Analytics</h2>
         <Link href={"#"} className="text-primary">
           Click here to Access
         </Link>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col xl:flex-row gap-4">
         <div className="border font-semibold p-4 rounded-md px-6">
           <p className="text-2xl">$99,999</p>
           <p className="text-gray-500">Asset Value</p>
@@ -32,7 +32,7 @@ const MarketAnalytics = () => {
       </div>
 
       <div className="grid grid-cols-6 gap-4">
-        <div className="col-span-3">
+        <div className="col-span-6  xl:col-span-3">
           <Table>
             <TableCaption></TableCaption>
             <TableHeader>
@@ -83,7 +83,7 @@ const MarketAnalytics = () => {
           </Table>
         </div>
 
-        <div className="col-span-3">
+        <div className="col-span-6 xl:col-span-3">
           <Table>
             <TableCaption></TableCaption>
             <TableHeader>

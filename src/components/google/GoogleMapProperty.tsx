@@ -8,12 +8,12 @@ import { marker } from "leaflet";
 
 const MapContainer = dynamic(
   () => import("react-leaflet").then((m) => m.MapContainer),
-  { ssr: false }
+  { ssr: false },
 );
 
 const TileLayer = dynamic(
   () => import("react-leaflet").then((m) => m.TileLayer),
-  { ssr: false }
+  { ssr: false },
 );
 
 const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
@@ -37,12 +37,13 @@ const GoogleMapProperty = ({
   markers?: GoogleMapPropertyProps[];
 }) => {
   return (
-    <section className="p-4 pt-0 space-y-2 relative min-h-48 z-0">
+    <section className="xl:p-4 pt-0 space-y-2 relative min-h-48 z-0">
       <MapContainer
         center={[center.lat, center.lng]}
         zoom={13}
         scrollWheelZoom={false}
         style={{ height: "400px", width: "100%" }}
+        attributionControl={false}
       >
         <TileLayer
           url="https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}"

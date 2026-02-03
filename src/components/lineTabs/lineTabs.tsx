@@ -28,7 +28,7 @@ const LineTabs = ({
   activePillId = "active-pill",
 }: LineTabsProps) => {
   const [activeTab, setActiveTab] = useState<string | number | undefined>(
-    defaultActiveId || items[0]?.id
+    defaultActiveId || items[0]?.id,
   );
 
   // Add Autoplay
@@ -79,7 +79,7 @@ const LineTabs = ({
             >
               {tab.content}
             </motion.div>
-          ) : null
+          ) : null,
         )}
       </div>
     </div>

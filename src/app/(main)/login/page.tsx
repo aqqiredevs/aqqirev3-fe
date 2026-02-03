@@ -38,7 +38,7 @@ const LoginPage = () => {
       }
     };
     verify();
-  }, [router]);
+  }, [router, isAuthenticated]);
 
   const handleLogin = async () => {
     try {
