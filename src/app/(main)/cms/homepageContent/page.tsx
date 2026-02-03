@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { apiInstance } from "@/utils/axiosInstance";
 import { checkErrors } from '@/utils/checkError';
 import TopStoriesCms from '@/components/topStories/topStoriesCms';
+import MarketTrendsCms from '@/components/marketTrends/marketTrendsCms';
 
 
 interface Story {
@@ -21,8 +22,10 @@ const HomepageContent = () => {
 
 
   return (
-    <div><TopStoriesCms /></div>
-
+    <div>
+      <div><TopStoriesCms /></div>
+      <div><MarketTrendsCms /></div>
+    </div>
 
   )
 }

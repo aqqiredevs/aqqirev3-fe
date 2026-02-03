@@ -18,13 +18,13 @@ const TopStoriesCms = () => {
     const [stagedSlots, setStagedSlots] = useState<Record<number, string | null>>({ 1: null, 2: null, 3: null, 4: null, 5: null });
     const [loading, setLoading] = useState(true);
 
-    // UI States
+
     const [activeSlot, setActiveSlot] = useState<number | null>(null);
     const [selectedStoryId, setSelectedStoryId] = useState<string>("");
     const [isCreating, setIsCreating] = useState(false);
     const [isManaging, setIsManaging] = useState(false);
 
-    // Form States
+
     const CATEGORIES = ["News", "Lifestyle", "Property", "Finance", "Investment"];
     const [newStory, setNewStory] = useState({ title: "", content: "", storyUrl: "", category: "" });
     const [editingStory, setEditingStory] = useState<Story | null>(null);
@@ -75,7 +75,7 @@ const TopStoriesCms = () => {
     const handleUpdateStory = async () => {
         if (!editingStory) return;
         try {
-            // Assuming your backend has a PUT endpoint: /api/cms/top-stories/{id}
+
             await apiInstance.put(`/api/cms/top-stories/${editingStory.id}`, editingStory);
             setAllStories(prev => prev.map(s => s.id === editingStory.id ? editingStory : s));
             setIsManaging(false);
@@ -91,7 +91,7 @@ const TopStoriesCms = () => {
             <h1 className="text-2xl font-bold mb-6">Homepage Top Stories</h1>
 
             <div className='flex gap-4 mb-10'>
-                {/* 5 SLOTS GRID */}
+
                 <div className="flex-[3] flex gap-4">
                     {[1, 2, 3, 4, 5].map((num) => {
                         const story = allStories.find(s => s.id === stagedSlots[num]);
@@ -104,7 +104,7 @@ const TopStoriesCms = () => {
                     })}
                 </div>
 
-                {/* CONTROL BUTTONS */}
+
                 <div className="flex-1 flex flex-col gap-2">
                     <button onClick={() => setIsCreating(true)} className="flex-1 border-2 border-indigo-200 bg-indigo-50 rounded-xl font-bold text-indigo-600 hover:bg-indigo-100 transition-colors border-dashed">
                         📝 Create Story
@@ -115,7 +115,7 @@ const TopStoriesCms = () => {
                 </div>
             </div>
 
-            {/* ASSIGN MODAL (Existing logic) */}
+
             {activeSlot && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6">
@@ -132,7 +132,7 @@ const TopStoriesCms = () => {
                 </div>
             )}
 
-            {/* CREATE MODAL (Existing logic) */}
+
             {isCreating && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 space-y-4">
@@ -149,7 +149,7 @@ const TopStoriesCms = () => {
                 </div>
             )}
 
-            {/* MANAGE MODAL (New logic) */}
+
             {isManaging && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 space-y-4 max-h-[90vh] overflow-y-auto">
@@ -158,7 +158,7 @@ const TopStoriesCms = () => {
                             <button onClick={() => { setIsManaging(false); setEditingStory(null); }} className="text-2xl">&times;</button>
                         </div>
 
-                        {/* STEP 1: SELECT STORY TO EDIT */}
+
                         <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
                             <label className="block text-xs font-bold text-amber-700 mb-2 uppercase">Select Story to Modify</label>
                             <select
@@ -173,7 +173,7 @@ const TopStoriesCms = () => {
                             </select>
                         </div>
 
-                        {/* STEP 2: EDIT FORM (Only shows if a story is selected) */}
+
                         {editingStory && (
                             <div className="space-y-4 pt-4 border-t animate-in fade-in slide-in-from-top-2">
                                 <input className="w-full p-3 border rounded-xl" value={editingStory.title} onChange={e => setEditingStory({ ...editingStory, title: e.target.value })} />
