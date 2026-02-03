@@ -1,31 +1,34 @@
 "use client";
-
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 function useLocalStorage<T>(
   key: string,
-  defaultValue: T
+  defaultValue: T,
 ): [T, Dispatch<SetStateAction<T>>] {
-  const [value, setValue] = useState<T>(defaultValue);
-
-  useEffect(() => {
+  const [value, setValue] = useState<T>(() => {
     try {
       const storedValue = localStorage.getItem(key);
       if (storedValue !== null) {
-        setValue(JSON.parse(storedValue));
-      } else {
-        localStorage.setItem(key, JSON.stringify(defaultValue));
+        return JSON.parse(storedValue);
       }
+      return defaultValue;
     } catch {
-      setValue(defaultValue);
+      return defaultValue;
     }
-  }, [key, defaultValue]);
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error("Error saving to localStorage:", error);
+    }
+  }, [key, value]);
 
   const setLocalStorageValue: Dispatch<SetStateAction<T>> = (valueOrFn) => {
     setValue((prev) => {
       const newValue =
         valueOrFn instanceof Function ? valueOrFn(prev) : valueOrFn;
-      localStorage.setItem(key, JSON.stringify(newValue));
       return newValue;
     });
   };

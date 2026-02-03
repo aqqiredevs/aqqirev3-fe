@@ -35,7 +35,7 @@ type Props = {
 };
 function PropertyCard({ price, title, location, area, parking, image }: Props) {
   return (
-    <div className="w-80 rounded-xl overflow-hidden bg-white shadow-lg mx-auto">
+    <div className="w-70 md:w-80 rounded-xl overflow-hidden bg-white shadow-lg mx-auto">
       <img
         src={image}
         alt={title}
@@ -193,11 +193,11 @@ export default function SearchMap() {
   }, []);
 
   return (
-    <section className="p-4 pt-0 space-y-2 relative min-h-48 z-0 mt-12">
+    <section className="p-1 md:p-4 pt-0 space-y-2 relative min-h-48 z-0 mt-12 md:mt-6 ">
       <MapContainer
         center={[40.7195, -74.0083]}
         zoom={13}
-        className="h-[60vh] w-full"
+        className="min-h-[80vh] md:h-[60vh] w-full "
         attributionControl={false}
       >
         <TileLayer
