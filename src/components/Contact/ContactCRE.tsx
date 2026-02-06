@@ -6,7 +6,7 @@ const ContactCRE = () => {
   return (
     <section
       className="bg-primary p-4 md:p-16 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/expand-reach-bg.png')" }}
+      style={{ backgroundImage: "url('/background/contacthero.png')" }}
     >
       <div className="container mx-auto text-center space-y-4 md:space-y-6 py-4">
         <h2 className="text-white text-2xl md:text-4xl font-semibold">

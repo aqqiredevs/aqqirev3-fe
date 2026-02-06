@@ -1,3 +1,5 @@
+import Line from "@/components/Line";
+import { CiLocationOn } from "react-icons/ci";
 const BasicInformation = ({
   name,
   address,
@@ -8,14 +10,13 @@ const BasicInformation = ({
   description: string;
 }) => {
   return (
-    <section className="flex flex-col md:flex-row md:justify-between items-center gap-2">
-      <div>
-        <h1 className="text-3xl font-bold md:text-4xl  text-accent-foreground">
-          {name}
-        </h1>
-        <div>{address}</div>
+    <section className="space-y-4">
+      <h1 className="text-3xl md:text-4xl  text-accent-foreground">{name}</h1>
+      <div className="text-gray-400 flex items-center gap-2">
+        <CiLocationOn size={25} />
+        {address}
       </div>
-      <div className="text-2xl">Auctions by AQQIRE</div>
+      <Line className="mt-4" />
     </section>
   );
 };
