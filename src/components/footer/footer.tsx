@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaX } from "react-icons/fa6";
 
 const Footer = () => {
@@ -29,28 +30,44 @@ const Footer = () => {
         <div className="space-y-6 col-span-3 ">
           <ul className="space-y-4 lg:grid grid-cols-3 ml-auto pt-4 justify-items-center">
             <li className="w-full">
-              <p className="text-left">About Us</p>
+              <Link href="/about">
+                <p className="text-left">About Us</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Contact Us</p>
+              <Link href="/contact">
+                <p className="text-left">Contact Us</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Terms of Use</p>
+              <Link href="/terms">
+                <p className="text-left">Terms of Use</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Privacy and Policy</p>
+              <Link href="/privacy">
+                <p className="text-left">Privacy and Policy</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Advertise Your Products</p>
+              <Link href="/advertise">
+                <p className="text-left">Advertise Your Products</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">FAQ</p>
+              <Link href="/faq">
+                <p className="text-left">FAQ</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Pricing</p>
+              <Link href="/pricing">
+                <p className="text-left">Pricing</p>
+              </Link>
             </li>
             <li className="w-full">
-              <p className="text-left">Post a Property</p>
+              <Link href="/post-property">
+                <p className="text-left">Post a Property</p>
+              </Link>
             </li>
           </ul>
         </div>
